@@ -1,0 +1,106 @@
+valovalo@lx2-fuxi118:~/AA koulu/ohte/ot_viikko1$ git log --stat | cat
+commit 87d8a0f1a07424bd6b1da5bef7bff19a394352c6
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 12:13:21 2023 +0200
+
+    muutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 599851d12db9ffe51c36bc9cf8ff628da83b0ca8
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 12:05:16 2023 +0200
+
+    uusi hakemisto
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ee01cd6c3e41482d48eed36544745ebfd62ceb94
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:30:41 2023 +0200
+
+    muutoksia
+
+ eka.txt    | 9 ++++++---
+ kolmas.txt | 5 ++++-
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+commit eb13d3849982ca24664b8ad8b75d4f81277aff1d
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:28:26 2023 +0200
+
+    tiedoston nimen vaihto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6f4d7f8cd2655ee1df447bf5c86ebec3fcf9bf56
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:26:25 2023 +0200
+
+    poistetaan tiedosto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit cb7db3b5dbebd3a27af0828477d2a867b7e4bc45
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:23:01 2023 +0200
+
+    muutoksia tiedostoon
+
+ tiedosto.txt | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+commit 678435423634cf5acfa1d57aedafbae04e2cfe51
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:21:41 2023 +0200
+
+    lisää tekstiä tiedostoon
+
+ tiedosto.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 532ed8ada1516dc83a24a4aea80b330fc9c0aa50
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:13:38 2023 +0200
+
+    muutoksia ja lisäys
+
+ kolmas.txt             | 1 +
+ stuff/jokutiedosto.txt | 0
+ toinen.txt             | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit 71ed4eb60dca6668d4d93170d333fa11eb7241f0
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 11:10:02 2023 +0200
+
+    lisättiin tekstitiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1ecc30a10a495596ecf16092ed07fb11b9c20ff8
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 10:54:18 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 6ffb07d692d131cf94ce1fca198af1c755cb46f3
+Author: Lotta-Linnea Vahter <macabre.cs@gmail.com>
+Date:   Tue Mar 14 10:52:08 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
