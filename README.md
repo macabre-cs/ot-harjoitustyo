@@ -1,2 +1,6 @@
-# Tähän joku naseva otsikko
-Tässä voisi vaikkapa sitten kertoa vähän kaikesta. Oli se sitten itse projektista tai siitä kuinka hyvää **vesi on**. Vedestä puheen ollen *muistathan juoda vettä :3*
+# Ohjelmistotekniikka, harjoitustyö
+## Tehtävät
+### Viikko 1
+[gitlog.txt](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+
+[komentorivi.txt](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
