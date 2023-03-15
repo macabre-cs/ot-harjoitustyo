@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on vuoropohjainen peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään.
+Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on vuoropohjainen peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään. Pelin idea on saanut paljon inspiraatiota [Tamagotcheista](https://fi.wikipedia.org/wiki/Tamagotchi).
 
 ## Suunnitellut toiminnallisuudet
 - Sovelluksen avautuessa käyttäjä voi nimetä virtuaalilemmikkinsä
@@ -14,7 +14,6 @@ placeholder
 
 ## Grafiikka
 - Mahdollinen collab ystävän kanssa *(eli ystäväni piirtäisi virtuaalilemmikin spriten)*
-- Vaatimaton käyttöliittymä ainakin alkuun
 
 ## Jatkokehitysideoita
 - Virtuaalilemmikin nimi tulee olla uniikki
@@ -28,3 +27,4 @@ placeholder
   - Virtuaalilemmikin voi pestä
   - Muita hauskoja tai kamalia toimintoja
 - Esteettisempi käyttöliittymä
+- Mahdollisuus vaihtaa käyttöliittymän kieli japaniksi *(olisi söpö tribuutti alkuperäiselle tamagotchille)*
