@@ -10,7 +10,9 @@ Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on vuorop
 - Virtuaalilemmikille voi tehdä jotain ikävää :(
 
 ## Käyttöliittymäluonnos
-placeholder
+<img src="https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/alustava_kayttoliittyma.png" alt="Kuva alustavasta käyttöliittymäluonnoksesta. Kuvassa on kissaa muistuttava virtuaalilemmikki, jonka yläpuolella on paikka virtuaalilemmikin nimelle ja alapuolella valikko eri toiminnoista." width="635" height="449">
+
+Alustava käyttöliittymäluonnos. Virtuaalilemmikin yläpuolella on paikka virtuaalilemmikin nimelle ja alapuolella valikko eri toiminnoille.
 
 ## Grafiikka
 - Mahdollinen collab ystävän kanssa *(eli ystäväni piirtäisi virtuaalilemmikin spriten)*
