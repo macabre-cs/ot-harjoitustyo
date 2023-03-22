@@ -1,16 +1,16 @@
 ```mermaid
 sequenceDiagram
-    participant Main
-    participant Machine
-    participant Engine
-    participant FuelTank
-    
-    Main->>+Machine: Machine()
-    Machine->>+FuelTank: FuelTank()
-    Machine->>+Machine: self._tank.fill(40)
-    #Fueltank->>+Machine: fill(40)
-    Machine->>+Engine: Engine(self.__tank)
-
-
-
+    main->>+menopeli: Machine()
+    menopeli->>+tank: FuelTank()
+    menopeli->>+tank: fill(40)
+    menopeli->>+engine: Engine(tank)
+    menopeli-->>+main:   
+    main->>+menopeli: drive()
+    menopeli->>+engine: start()
+    engine->>+tank: consume(5)
+    menopeli->>+engine: is_running()
+    engine->>+menopeli: True
+    menopeli->>+engine: use_energy()
+    engine->>+tank: consume(10)
+    menopeli-->>+main:     
 ```
