@@ -15,7 +15,9 @@ Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on vuorop
 Alustava käyttöliittymäluonnos. Virtuaalilemmikin yläpuolella on paikka virtuaalilemmikin nimelle ja alapuolella valikko eri toiminnoille.
 
 ## Grafiikka
-- Mahdollinen collab ystävän kanssa *(eli ystäväni piirtäisi virtuaalilemmikin spriten)*
+<img src="https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Rotta_Otus_300x300.png" alt="Kuva virtuaalilemmikistä. Virtuaalilemmikki muistuttaa ulkomuodoltaan rottaa. Virtuaalilemmikillä on valkoinen turkki, jossa on sinisiä laikkuja ja sillä on vaaleanpunainen häntä.">
+
+Virtuaalilemmikin on kuvittanut ystäväni [Haze Laine](https://www.instagram.com/hasuart_/).
 
 ## Jatkokehitysideoita
 - Virtuaalilemmikin nimi tulee olla uniikki
