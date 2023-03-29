@@ -2,3 +2,5 @@
 __pycache__
 .coverage
 htmlcov
+/src/__pycache__
+/src/tests/__pycache__
