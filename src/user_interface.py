@@ -12,7 +12,7 @@ class UI:
         button2 = ttk.Button(master=self._root, text="Feed", command=self._feed_clicked)
         button3 = ttk.Button(master=self._root, text="Hurt :(", command=self._hurt_clicked)
         
-        pet_image = Image.open("/home/valovalo/AA koulu/ohte/ot-harjoitustyo/dokumentaatio/kuvat/Rotta_Otus_300x300.png")
+        pet_image = Image.open("dokumentaatio/kuvat/Rotta_Otus_300x300.png")
         photo = ImageTk.PhotoImage(pet_image)
 
         pet_img_label = ttk.Label(master=self._root, image=photo)
