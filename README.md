@@ -1,18 +1,10 @@
 # Ohjelmistotekniikka, harjoitustyö
+## Virtuaalilemmikki
+Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään. Pelin idea on saanut paljon inspiraatiota [Tamagotcheista](https://fi.wikipedia.org/wiki/Tamagotchi).
+
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-
+- [Testausdokumentti](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 - [Työaikakirjanpito](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
-## Tehtävät
-### Viikko 1
-Tästä pääset kurkistamaan tehtävieni vastaukset :3
-*jos siis uskallat hehe*
+- [Changelog](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
-[gitlog.txt](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-### Viikko 2
-[unicafe tehtävän kansio](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/laskarit/viikko2/unicafe)
-
-[testikattavuusraportti](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/laskarit/viikko2/viikko2_coverage_report.png)
