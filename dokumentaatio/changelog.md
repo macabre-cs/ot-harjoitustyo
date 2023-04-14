@@ -9,3 +9,11 @@
 - Käyttäjä voi painaa eri nappeja, jotka tulostavat komentoriville tulosteen. Painamalla ''Hurt :('' nappia pelin ikkuna myös sulkeutuu.
 - Testattu, että UI-luokka toimii. Kaikki napit toimivat ja tulostavat oikeat tulosteet komentoriville. Ikkunan tuhoaminen myös toimii.
 - Aloitettu NamePetView-luokka, joka vastaa virtuaalilemmikin nimeämisikkunasta (ei toimi vielä).
+
+## Viikko 4
+- Sovelluksen koodin rakenne on uusittu kokonaan, jotta se olisi selkeämpi.
+- Käyttäjä voi lopettaa pelin uudesta ''Close game'' napista, joka avaa käyttäjälle uuden ikkunan, jossa kysytään haluaako käyttäjä lopettaa pelin.
+- Sovelluksen nappeja painamalla käyttäjän ruudulle ilmestyy ikkuna, joka kertoo käyttäjälle mitä hän teki pelissä. Nappien painaminen ei enää tulosta komentoriville mitään.
+- Luotu uusi luokka MainView, joka vastaa sovelluksen pääikkunasta ja sen toiminnallisuuksista.
+- Luotu uusi luokka CloseGameView, joka vastaa sovelluksen sulkemisikkunasta.
+- UI-luokkaa on päivitetty
