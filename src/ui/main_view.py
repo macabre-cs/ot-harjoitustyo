@@ -1,5 +1,6 @@
 from tkinter import Tk, ttk, constants, messagebox
 from PIL import ImageTk, Image
+from pathlib import Path
 import sys
 import random
 
@@ -32,7 +33,9 @@ class MainView:
         button4 = ttk.Button(
             master=self._frame, text="Close game", command=self._handle_close_game)
         
-        pet_image = Image.open(__file__ + "/../../../data/graphics/Rotta_Otus_300x300.png")
+        graphics_folder = Path(__file__).parent.parent.parent /"data"/"graphics"
+        
+        pet_image = Image.open(graphics_folder/"Rotta_Otus_300x300.png")
                                
         photo = ImageTk.PhotoImage(pet_image)
 
