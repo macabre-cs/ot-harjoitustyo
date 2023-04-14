@@ -8,3 +8,48 @@ Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmik
 - [Työaikakirjanpito](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+## Asennus
+
+1. Asenna sovelluksen riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+2. Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
+## Komentorivikomennot
+
+### Ohjelman suoritus
+
+Ohjelman suoritus tapahtuu komennolla:
+
+```bash
+poetry run invoke start
+```
+
+### Testaus
+
+Testien suoritus tapahtuu komennolla:
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+Testikattavuus raportin generoiminen tapahtuu komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+Raportti generoituu _htmlcov_-hakemistoon
+
+### Pylint
+
+Pylint-tarkistukset suoritetaan komennolla:
+```bash
+poetry run invoke lint
+```
