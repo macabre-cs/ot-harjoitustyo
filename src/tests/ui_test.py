@@ -7,7 +7,7 @@ class TestUI(unittest.TestCase):
     def setUp(self):
         self.root = MagicMock()
     
-    def test_start_works(self):  #testataan toimiiko UI-luokan käynnistys oikein
+    def test_start_works(self):
         ui = UI(self.root)
 
         with patch.object(ui, "_show_main_view") as mock_show_main_view:
