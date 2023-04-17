@@ -6,4 +6,6 @@
 | 3.4 | 4 | testausta virtuaalityöasemalla, pientä säätöä käyttöliittymän koodiin, poetry säätöä, repon siistimistä, dokumentointia |
 | 6.4 | 5 | koodin rakenteen muuttaminen, lisää toiminnallisuutta(lopetusikkuna), nappien uudelleenteko, uusien luokkien tekeminen |
 | 14.4 | 2 | tasks säätöä, koodin toiminnallisuuden korjausta, dokumentointia |
-| yht | 19 |
+| 16.4 | 3 | testien kirjoittamista ja testaamista, erilaisiin materiaaleihin perehtymistä |
+| 17.4 | 3 | dokumentointia ja testausta |
+| yht | 25 |
