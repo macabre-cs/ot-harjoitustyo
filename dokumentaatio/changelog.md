@@ -17,3 +17,4 @@
 - Luotu uusi luokka MainView, joka vastaa sovelluksen pääikkunasta ja sen toiminnallisuuksista.
 - Luotu uusi luokka CloseGameView, joka vastaa sovelluksen sulkemisikkunasta.
 - UI-luokkaa on päivitetty
+- Testattu luokkien toiminnallisuutta (toimii)
