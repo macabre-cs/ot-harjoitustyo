@@ -5,9 +5,9 @@ Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on vuorop
 
 ## Suunnitellut toiminnallisuudet
 - Sovelluksen avautuessa käyttäjä voi nimetä virtuaalilemmikkinsä
-- Virtuaalilemmikkiä voi silittää
-- Virtuaalilemmikkiä voi syöttää
-- Virtuaalilemmikille voi tehdä jotain ikävää :(
+- Virtuaalilemmikkiä voi silittää (tehty)
+- Virtuaalilemmikkiä voi syöttää (tehty)
+- Virtuaalilemmikille voi tehdä jotain ikävää :( (tehty)
 
 ## Käyttöliittymäluonnos
 <img src="https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/alustava_kayttoliittyma.png" alt="Kuva alustavasta käyttöliittymäluonnoksesta. Kuvassa on kissaa muistuttava virtuaalilemmikki, jonka yläpuolella on paikka virtuaalilemmikin nimelle ja alapuolella valikko eri toiminnoista." width="635" height="449">
