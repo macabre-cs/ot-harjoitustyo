@@ -7,6 +7,7 @@ Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmik
 - [Testausdokumentti](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 - [Työaikakirjanpito](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+- [Arkkitehtuuri](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ## Asennus
 
