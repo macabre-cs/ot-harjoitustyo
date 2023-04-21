@@ -1,5 +1,8 @@
 from ui.main_view import MainView
 from ui.close_game_view import CloseGameView
+from ui.welcome_view import WelcomeView
+from ui.adopt_view import AdoptView
+from ui.login_view import LoginView
 
 
 class UI:
@@ -8,7 +11,7 @@ class UI:
         self._current_view = None
 
     def start(self):
-        self._show_main_view()
+        self._show_welcome_view()
 
     def _hide_current_view(self):
         if self._current_view:
@@ -33,4 +36,29 @@ class UI:
         self._hide_current_view()
 
         self._current_view = CloseGameView(self._root, self._handle_back)
+
+        self._current_view.pack()
+
+    def _show_welcome_view(self):
+        self._hide_current_view()
+
+        self._current_view = WelcomeView(
+            self._root, self._show_login_view, self._show_adopt_pet_view)
+
+        self._current_view.pack()
+
+    def _show_login_view(self):
+        self._hide_current_view()
+
+        self._current_view = LoginView(
+            self._root, self._show_main_view, self._show_adopt_pet_view)
+
+        self._current_view.pack()
+
+    def _show_adopt_pet_view(self):
+        self._hide_current_view()
+
+        self._current_view = AdoptView(
+            self._root, self._show_main_view, self._show_login_view)
+
         self._current_view.pack()

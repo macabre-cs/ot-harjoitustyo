@@ -1,16 +1,18 @@
-from tkinter import Tk, ttk, constants, messagebox
+from tkinter import ttk, constants, messagebox
 from PIL import ImageTk, Image
 from pathlib import Path
 import sys
 import random
+from services.pet_service import pet_service
+from repositories.pet_repository import pet_repository
 
 
 class MainView:
     def __init__(self, root, handle_close_game):
         self._root = root
-        self
         self._handle_close_game = handle_close_game
         self._frame = None
+        self._pet = pet_service.get_current_pet()
 
         self._initialize()
 
@@ -22,7 +24,7 @@ class MainView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        name_label = ttk.Label(master=self._frame, text="Pet name")
+        name_label = ttk.Label(master=self._frame, text=f"{self._pet.name}")
         button1 = ttk.Button(master=self._frame, text="Love",
                              command=self._love_clicked)
         button2 = ttk.Button(master=self._frame, text="Feed",
@@ -32,11 +34,12 @@ class MainView:
 
         button4 = ttk.Button(
             master=self._frame, text="Close game", command=self._handle_close_game)
-        
-        graphics_folder = Path(__file__).parent.parent.parent /"data"/"graphics"
-        
+
+        graphics_folder = Path(
+            __file__).parent.parent.parent / "data"/"graphics"
+
         pet_image = Image.open(graphics_folder/"Rotta_Otus_300x300.png")
-                               
+
         photo = ImageTk.PhotoImage(pet_image)
 
         pet_img_label = ttk.Label(master=self._frame, image=photo)
@@ -71,4 +74,6 @@ class MainView:
                         "Bad!!!",
                         "ei kyl ollu fresh"]
         messagebox.showinfo(message=random.choice(hurt_choices))
+        pet_repository.punish_player(self._pet.name)
+        pet_repository.cleanup_data()
         sys.exit()
