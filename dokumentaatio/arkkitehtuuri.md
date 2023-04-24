@@ -34,3 +34,12 @@ classDiagram
     -_yes_clicked(self)
   }
 ```
+## Sovelluksen toiminnallisuus
+
+*tähän kiva teksti sovelluksen toimintalogiikasta*
+
+### Virtuaalilemmikin luominen
+
+Sovelluksen avautuessa käyttäjän voi adoptoida uuden lemmikin painamalla nappia ''I dont't have a pet yet'', joka vie käyttäjän uuteen näkymään, jossa käyttäjä syöttää lemmikin nimen ja salasanan. Painamalla ''Adopt your new little friend!'' käyttäjä kirjataan sisään sovellukseen uudella lemmikillään.
+
+*tähän sekvenssikaavio siitä mitä tapahtuu brrr*
