@@ -23,16 +23,12 @@ def make_tables(connection):
 
     connection.commit()
 
-    print("make tables tehty")
-
 
 def initialize_database():
     connection = get_database_connection()
 
     destroy_tables(connection)
     make_tables(connection)
-
-    print("initialize tehty")
 
 
 if __name__ == "__main__":
