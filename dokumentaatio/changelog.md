@@ -18,3 +18,11 @@
 - Luotu uusi luokka CloseGameView, joka vastaa sovelluksen sulkemisikkunasta.
 - UI-luokkaa on päivitetty
 - Testattu luokkien toiminnallisuutta (toimii)
+
+## Viikko 5
+- Käyttäjä voi nyt adoptoida uuden lemmikin tai kirjautua sisään jos hänellä on jo lemmikki. Eli käyttäjä voi rekisteröityä tai kirjautua sisään.
+- Luotu uusi luokka Pet, joka luo jokaiselle lemmikille Pet-olion.
+- Luotu uusi luokka PetService, joka vastaa lemmikin adoptoinnin ja kirjautumisen toiminnallisuudesta.
+- Luotu uusi luokka PetRepository, joka vastaa SQLite-tietokannan ja virtuaalilemmikin yhteydestä. Eli tallentaa tiedot tietokantaan, etsii tiedot tietokannasta ja poistaa tiedot tietokannasta.
+- Testattu luokan PetRepository toimivuutta (lemmikin luominen ja etsiminen nimellä sekä pelaajan rankaiseminen).
+- Aloitettu luokan PetService testaus (nykyisen lemmikin hakeminen).
