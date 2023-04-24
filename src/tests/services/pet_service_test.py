@@ -1,7 +1,7 @@
 import unittest
 from entities.pet import Pet
 from services.pet_service import (
-    PetService, InvalidCredentialsError, PetNameAlreadyInUseError)
+    PetService)
 
 
 class MockPetRepository:
