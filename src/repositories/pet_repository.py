@@ -14,7 +14,7 @@ class PetRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "INSERT INTO pets (name, password) VALUES (?, ?)",
+            "INSERT INTO pets (name, password) VALUES (?, ?);",
             (pet.name, pet.password)
         )
 
@@ -26,7 +26,7 @@ class PetRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "SELECT * FROM pets WHERE name = ?",
+            "SELECT * FROM pets WHERE name = ?;",
             (name,)
         )
 
@@ -38,7 +38,7 @@ class PetRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "DELETE FROM pets WHERE name = ?",
+            "DELETE FROM pets WHERE name = ?;",
             (name,)
         )
 
@@ -52,6 +52,22 @@ class PetRepository:
         )
 
         self._connection.commit()
+
+    def delete_all_pets(self):
+        cursor = self._connection.cursor()
+
+        cursor.execute("DELETE FROM pets;")
+
+        self._connection.commit()
+
+    def locate_all_pets(self):
+        cursor = self._connection.cursor()
+
+        cursor.execute("SELECT * FROM pets;")
+
+        rows = cursor.fetchall()
+
+        return list(map(locate_pet_by_row, rows))
 
 
 pet_repository = PetRepository(get_database_connection())

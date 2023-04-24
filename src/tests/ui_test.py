@@ -11,9 +11,9 @@ class TestUI(unittest.TestCase):
     def test_start_works(self):
         ui = UI(self.root)
 
-        with patch.object(ui, "_show_main_view") as mock_show_main_view:
+        with patch.object(ui, "_show_welcome_view") as mock_show_welcome_view:
             ui.start()
-            mock_show_main_view.assert_called_once()
+            mock_show_welcome_view.assert_called_once()
 
     def test_handle_close_game_works(self):
         ui = UI(self.root)
