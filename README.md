@@ -16,7 +16,14 @@ Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmik
 ```bash
 poetry install
 ```
-2. Käynnistä sovellus komennolla:
+
+2. Alusta sovelluksen tietokanta komennolla:
+
+```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus komennolla:
 
 ```bash
 poetry run invoke start
