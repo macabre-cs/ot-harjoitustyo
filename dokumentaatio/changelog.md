@@ -24,5 +24,8 @@
 - Luotu uusi luokka Pet, joka luo jokaiselle lemmikille Pet-olion.
 - Luotu uusi luokka PetService, joka vastaa lemmikin adoptoinnin ja kirjautumisen toiminnallisuudesta.
 - Luotu uusi luokka PetRepository, joka vastaa SQLite-tietokannan ja virtuaalilemmikin yhteydestä. Eli tallentaa tiedot tietokantaan, etsii tiedot tietokannasta ja poistaa tiedot tietokannasta.
+- Luotu uusi luokka WelcomeView, joka vastaa sovelluksen aloitusnäkymästä.
+- Luotu uusi luokka AdoptView, joka vastaa virtuaalilemmikin luomisnäkymästä.
+- Luotu uusi luokka LoginView, joka vastaa jo olemassa olevan virtuaalilemmikin kirjautumisnäkymästä.
 - Testattu luokan PetRepository toimivuutta (lemmikin luominen ja etsiminen nimellä sekä pelaajan rankaiseminen).
 - Aloitettu luokan PetService testaus (nykyisen lemmikin hakeminen).
