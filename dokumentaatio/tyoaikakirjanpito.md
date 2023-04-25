@@ -9,7 +9,7 @@
 | 16.4 | 3 | testien kirjoittamista ja testaamista, erilaisiin materiaaleihin perehtymistä |
 | 17.4 | 3 | dokumentointia ja testausta |
 | 20.4 | 7 | SQLite-tietokannan alustamista sovellukseen. Aloitusnäkymän, kirjautumisnäkymän ja rekisteröitymisnäkymän tekeminen (eli käyttäjän kirjautumista ja rekisteröintiä vaativia toimenpiteitä) |
-| 21.4 | 3 | SQLite-tietokannan toimivuutta edistäviä toimenpiteitä. Eli debuggausta ja jatkamista siihen mihin eileksi jäin |
+| 21.4 | 3 | SQLite-tietokannan toimivuutta edistäviä toimenpiteitä, eli debuggausta ja jatkamista siihen mihin eilen jäin |
 | 24.4 | 4 | testien kirjoittamista uusille toiminnallisuuksille, testaamista, debuggausta, dokumentointia |
 | 25.4 | 3 | dokumentointia ja sovelluksen testaamista |
 | yht | 42 |
