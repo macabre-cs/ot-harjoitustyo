@@ -9,6 +9,10 @@ Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmik
 - [Arkkitehtuuri](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 - [Testausdokumentti](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
 
+## Release
+
+Tuorein release löytyy [täältä](https://github.com/macabre-cs/ot-harjoitustyo/releases/tag/viikko5).
+
 ## Asennus
 
 1. Asenna sovelluksen riippuvuudet komennolla:
