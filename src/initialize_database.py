@@ -2,6 +2,11 @@ from database_connection import get_database_connection
 
 
 def destroy_tables(connection):
+    """Tuhoaa tietokannan taulut.
+
+    Args:
+        connection: Tietokantayhteys.
+    """
     cursor = connection.cursor()
 
     cursor.execute("""
@@ -12,6 +17,11 @@ def destroy_tables(connection):
 
 
 def make_tables(connection):
+    """Luo tietokantataulut.
+
+    Args:
+        connection: Tietokantayhteys.
+    """
     cursor = connection.cursor()
 
     cursor.execute("""
@@ -25,6 +35,8 @@ def make_tables(connection):
 
 
 def initialize_database():
+    """Alustaa tietokantataulut.
+    """
     connection = get_database_connection()
 
     destroy_tables(connection)

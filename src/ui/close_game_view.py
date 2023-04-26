@@ -3,7 +3,15 @@ import sys
 
 
 class CloseGameView:
+    """Pelin lopetusnäkymä.
+    """
     def __init__(self, root, handle_back):
+        """CloseGameView-luokan konstruktori, jossa luodaan lopetusnäkymä.
+
+        Args:
+            root (TKinter-elementti): Juurikomponentti, johon näkymä alustetaan.
+            handle_back (metodi): Kutsutaan kun käyttäjä ei haluakkaan lopettaa peliä.
+        """
         self._root = root
         self._handle_back = handle_back
         self._frame = None
@@ -11,9 +19,13 @@ class CloseGameView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän.
+        """
         self._frame.destroy()
 
     def _initialize(self):

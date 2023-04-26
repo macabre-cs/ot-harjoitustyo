@@ -8,7 +8,15 @@ from repositories.pet_repository import pet_repository
 
 
 class MainView:
+    """Sovelluksen päänäkymä.
+    """
     def __init__(self, root, handle_close_game):
+        """MainView-luokan konstruktori, jossa luodaan päänäkymä.
+
+        Args:
+            root (TKinter-elementti): Juurikomponentti, johon näkymä alustetaan.
+            handle_close_game (metodi): Kutsutaan kun käyttäjä lopettaa pelin.
+        """
         self._root = root
         self._handle_close_game = handle_close_game
         self._frame = None
@@ -17,9 +25,13 @@ class MainView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän.
+        """
         self._frame.destroy()
 
     def _initialize(self):

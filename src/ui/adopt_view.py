@@ -3,7 +3,16 @@ from services.pet_service import pet_service, PetNameAlreadyInUseError
 
 
 class AdoptView:
+    """Virtuaalilemmikin adoptointinäkymä, jossa käyttäjä voi ''rekisteröityä''.
+    """
     def __init__(self, root, handle_adopt_pet, handle_show_login_view):
+        """AdoptView-luokan konstruktori, jossa luodaan adoptointinäkymä.
+
+        Args:
+            root (TKinter-elementti): Juurikomponentti, johon näkymä alustetaan.
+            handle_adopt_pet (metodi): Kutsutaan käyttäjän adoptoidessa virtuaalilemmikin.
+            handle_show_login_view (metodi): Kutsuu kirjautumisnäkymän näyttävää metodia.
+        """
         self._root = root
         self._handle_adopt_pet = handle_adopt_pet
         self._handle_show_login_view = handle_show_login_view
@@ -14,9 +23,13 @@ class AdoptView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän.
+        """
         self._frame.destroy()
 
     def _initialize(self):

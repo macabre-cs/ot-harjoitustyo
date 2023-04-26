@@ -6,11 +6,20 @@ from ui.login_view import LoginView
 
 
 class UI:
+    """Luokka, joka vastaa sovelluksen käyttöliittymästä
+    """
     def __init__(self, root):
+        """UI-luokan kontruktori jossa luodaan luokka, joka vastaa käyttöliittymästä.
+
+        Args:
+            root (TKinter-elementti): Käyttöliittymän juurikomponentti, jonka sisään käyttöliittymä alustetaan.
+        """
         self._root = root
         self._current_view = None
 
     def start(self):
+        """Käynnistää käyttöliittymän näyttämällä aloitusnäkymän.
+        """
         self._show_welcome_view()
 
     def _hide_current_view(self):

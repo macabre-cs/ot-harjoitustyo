@@ -7,7 +7,14 @@ def locate_pet_by_row(row):
 
 
 class PetRepository:
+    """Luokka, joka vastaa käyttäjän ja tietokannan välisestä tietojenkäsittelystä.
+    """
     def __init__(self, connection):
+        """PetRepository-luokan konstruktori.
+
+        Args:
+            connection: Tietokantayhteys.
+        """
         self._connection = connection
 
     def create(self, pet):

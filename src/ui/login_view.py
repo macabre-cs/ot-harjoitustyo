@@ -3,7 +3,16 @@ from services.pet_service import pet_service, InvalidCredentialsError
 
 
 class LoginView:
+    """Sovelluksen kirjautumisnäkymä, jossa käyttäjä voi kirjautua sisään.
+    """
     def __init__(self, root, handle_login, handle_show_adopt_pet_view):
+        """LoginView-luokan konstruktori, jossa luodaan kirjautumisnäkymä.
+
+        Args:
+            root (TKinter-elementti): Juurikomponentti, johon näkymä alustetaan.
+            handle_login (metodi): Kutsutaan käyttäjän kirjautuessa sisään.
+            handle_show_adopt_pet_view (metodi): Kutsuu adoptointinäkymän näyttävää metodia.
+        """
         self._root = root
         self._frame = None
         self._handle_login = handle_login
@@ -14,9 +23,13 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän.
+        """
         self._frame.destroy()
 
     def _initialize(self):
