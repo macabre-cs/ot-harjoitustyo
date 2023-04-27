@@ -11,5 +11,7 @@
 | 20.4 | 7 | SQLite-tietokannan alustamista sovellukseen. Aloitusnäkymän, kirjautumisnäkymän ja rekisteröitymisnäkymän tekeminen (eli käyttäjän kirjautumista ja rekisteröintiä vaativia toimenpiteitä) |
 | 21.4 | 3 | SQLite-tietokannan toimivuutta edistäviä toimenpiteitä, eli debuggausta ja jatkamista siihen mihin eilen jäin |
 | 24.4 | 4 | testien kirjoittamista uusille toiminnallisuuksille, testaamista, debuggausta, dokumentointia |
-| 25.4 | 3 | dokumentointia ja sovelluksen testaamista |
-| yht | 42 |
+| 25.4 | 5 | dokumentointia, sovelluksen testaamista ja ui:n suunnittelua |
+| 26.4 | 3 | docstringejä ja pieniä korjauksia koodiin |
+| 27.4 | 7 | testien kirjoittamista, testaamista, dokumentointia, graafisen käyttöliittymän söpöyttämistä |
+| yht | 54 |
