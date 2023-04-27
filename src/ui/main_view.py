@@ -5,6 +5,7 @@ import sys
 import random
 from services.pet_service import pet_service
 from repositories.pet_repository import pet_repository
+from ui.ui_style import apply_style
 
 
 class MainView:
@@ -23,12 +24,13 @@ class MainView:
         self._frame = None
         self._pet = pet_service.get_current_pet()
 
+        apply_style()
         self._initialize()
 
     def pack(self):
         """Näyttää näkymän.
         """
-        self._frame.pack(fill=constants.X)
+        self._frame.pack()
 
     def destroy(self):
         """Tuhoaa näkymän.
@@ -36,17 +38,19 @@ class MainView:
         self._frame.destroy()
 
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        name_label = ttk.Label(master=self._frame, text=f"{self._pet.name}")
-        button1 = ttk.Button(master=self._frame, text="Love",
+        self._frame = ttk.Frame(
+            master=self._root, style="game.TFrame", width=640, height=500)
+        name_label = ttk.Label(
+            master=self._frame, text=f"{self._pet.name}", style="name.TLabel")
+        button1 = ttk.Button(master=self._frame, text="Love", style="game.TButton",
                              command=self._love_clicked)
-        button2 = ttk.Button(master=self._frame, text="Feed",
+        button2 = ttk.Button(master=self._frame, text="Feed", style="game.TButton",
                              command=self._feed_clicked)
         button3 = ttk.Button(
-            master=self._frame, text="Hurt :(", command=self._hurt_clicked)
+            master=self._frame, text="Hurt :(", style="game.TButton", command=self._hurt_clicked)
 
         button4 = ttk.Button(
-            master=self._frame, text="Close game", command=self._handle_close_game)
+            master=self._frame, text="Close game", style="game.TButton", command=self._handle_close_game)
 
         graphics_folder = Path(
             __file__).parent.parent.parent / "data"/"graphics"
@@ -55,17 +59,16 @@ class MainView:
 
         photo = ImageTk.PhotoImage(pet_image)
 
-        pet_img_label = ttk.Label(master=self._frame, image=photo)
+        pet_img_label = ttk.Label(
+            master=self._frame, style="bgcolor.TLabel", image=photo)
         pet_img_label.image = photo
 
-        name_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
-
-        pet_img_label.grid(row=1, column=0, columnspan=3)
-
-        button1.grid(row=2, column=0, padx=10, pady=10)
-        button2.grid(row=2, column=1, padx=10, pady=10)
-        button3.grid(row=2, column=2, padx=10, pady=10)
-        button4.grid(row=3, column=0, padx=10, pady=10)
+        name_label.place(x=200, y=30, width=240, height=40)
+        pet_img_label.place(x=170, y=90)
+        button1.place(x=50, y=420)
+        button2.place(x=190, y=420)
+        button3.place(x=330, y=420)
+        button4.place(x=470, y=420)
 
     def _love_clicked(self):
         love_choices = ["You gave your virtual pet some headpats!",

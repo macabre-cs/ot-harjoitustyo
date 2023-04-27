@@ -4,6 +4,8 @@ from ui.ui import UI
 
 def main():
     window = Tk()
+    window.geometry("640x500")
+    window.resizable(False, False)
     window.title("Virtual pet")
 
     ui_view = UI(window)

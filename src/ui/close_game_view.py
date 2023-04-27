@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 import sys
+from ui.ui_style import apply_style
 
 
 class CloseGameView:
@@ -17,12 +18,13 @@ class CloseGameView:
         self._handle_back = handle_back
         self._frame = None
 
+        apply_style()
         self._initialize()
 
     def pack(self):
         """Näyttää näkymän.
         """
-        self._frame.pack(fill=constants.X)
+        self._frame.pack()
 
     def destroy(self):
         """Tuhoaa näkymän.
@@ -30,17 +32,19 @@ class CloseGameView:
         self._frame.destroy()
 
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        quit_label = ttk.Label(master=self._frame, text="Do you want to quit?")
+        self._frame = ttk.Frame(
+            master=self._root, style="game.TFrame", width=640, height=500)
+        quit_label = ttk.Label(
+            master=self._frame, text="Do you want to quit?", style="game.TLabel")
 
         yes_button = ttk.Button(
-            master=self._frame, text="YES", command=self._yes_clicked)
+            master=self._frame, text="YES", style="game.TButton", command=self._yes_clicked)
         no_button = ttk.Button(
-            master=self._frame, text="NO", command=self._handle_back)
+            master=self._frame, text="NO", style="game.TButton", command=self._handle_back)
 
-        quit_label.grid(row=0, column=0)
-        yes_button.grid(row=1, column=0)
-        no_button.grid(row=1, column=1)
+        quit_label.place(x=170, y=100)
+        yes_button.place(x=170, y=370)
+        no_button.place(x=350, y=370)
 
     def _yes_clicked(self):
         sys.exit()

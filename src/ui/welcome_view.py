@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+from ui.ui_style import apply_style
 
 
 class WelcomeView:
@@ -18,12 +19,13 @@ class WelcomeView:
         self._handle_show_adopt_view = handle_show_adopt_view
         self._frame = None
 
+        apply_style()
         self._initialize()
 
     def pack(self):
         """Näyttää näkymän.
         """
-        self._frame.pack(fill=constants.X)
+        self._frame.pack()
 
     def destroy(self):
         """Tuhoaa näkymän.
@@ -32,14 +34,15 @@ class WelcomeView:
 
     def _initialize(self):
         self._frame = ttk.Frame(
-            master=self._root, borderwidth=5, relief="raised")
-        welcome_label = ttk.Label(master=self._frame, text="Welcome back?")
+            master=self._root, style="game.TFrame", width=640, height=500)
+        welcome_label = ttk.Label(
+            master=self._frame, style="game.TLabel", text="Welcome back?")
 
         login_button = ttk.Button(
-            master=self._frame, text="I already have a pet", command=self._handle_show_login_view, width=20)
+            master=self._frame, text="I already have a pet", style="game.TButton", command=self._handle_show_login_view)
         register_button = ttk.Button(
-            master=self._frame, text="I don't have a pet yet", command=self._handle_show_adopt_view, width=20)
+            master=self._frame, text="I don't have a pet yet", style="game.TButton", command=self._handle_show_adopt_view)
 
-        welcome_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
-        login_button.grid(row=1, column=0, padx=10, pady=10)
-        register_button.grid(row=1, column=1, padx=10, pady=10)
+        welcome_label.place(x=200, y=100)
+        login_button.place(x=30, y=370)
+        register_button.place(x=330, y=370)

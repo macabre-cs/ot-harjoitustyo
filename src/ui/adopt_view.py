@@ -1,5 +1,6 @@
 from tkinter import ttk, constants, messagebox
 from services.pet_service import pet_service, PetNameAlreadyInUseError
+from ui.ui_style import apply_style
 
 
 class AdoptView:
@@ -21,12 +22,13 @@ class AdoptView:
         self._pet_name_entry = None
         self._password_entry = None
 
+        apply_style()
         self._initialize()
 
     def pack(self):
         """Näyttää näkymän.
         """
-        self._frame.pack(fill=constants.X)
+        self._frame.pack()
 
     def destroy(self):
         """Tuhoaa näkymän.
@@ -34,38 +36,39 @@ class AdoptView:
         self._frame.destroy()
 
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
+        self._frame = ttk.Frame(
+            master=self._root, style="game.TFrame", width=640, height=500)
 
         self._create_adopt_pet_field()
         self._create_password_field()
 
         adopt_pet_button = ttk.Button(
-            master=self._frame, text="Adopt your new little friend!", command=self._adopt_pet_handler)
+            master=self._frame, text="Adopt your new little friend!", style="game.TButton", command=self._adopt_pet_handler)
         login_pet_button = ttk.Button(
-            master=self._frame, text="I already have a pet", command=self._handle_show_login_view)
+            master=self._frame, text="I already have a pet", style="game.TButton", command=self._handle_show_login_view)
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=300)
-
-        adopt_pet_button.grid(padx=5, pady=5)
-        login_pet_button.grid(padx=5, pady=5)
+        adopt_pet_button.place(x=140, y=320)
+        login_pet_button.place(x=190, y=400)
 
     def _create_adopt_pet_field(self):
         pet_name_label = ttk.Label(
-            master=self._frame, text="Name your new pet!")
+            master=self._frame, text="Name your new pet!", style="gamev2.TLabel")
 
-        self._pet_name_entry = ttk.Entry(master=self._frame)
+        self._pet_name_entry = ttk.Entry(
+            master=self._frame, style="game.TEntry")
 
-        pet_name_label.grid(padx=5, pady=5)
-        self._pet_name_entry.grid(padx=5, pady=5)
+        pet_name_label.place(x=200, y=50)
+        self._pet_name_entry.place(x=200, y=100, width=250, height=30)
 
     def _create_password_field(self):
         password_label = ttk.Label(
-            master=self._frame, text="Secret word only you and your pet will know")
+            master=self._frame, text="Secret word only you and your pet will know", style="gamev2.TLabel")
 
-        self._password_entry = ttk.Entry(master=self._frame)
+        self._password_entry = ttk.Entry(
+            master=self._frame, style="game.TEntry")
 
-        password_label.grid(padx=5, pady=5)
-        self._password_entry.grid(padx=5, pady=5)
+        password_label.place(x=40, y=150)
+        self._password_entry.place(x=200, y=200, width=250, height=30)
 
     def _adopt_pet_handler(self):
         pet_name = self._pet_name_entry.get()
