@@ -8,6 +8,7 @@ from ui.login_view import LoginView
 class UI:
     """Luokka, joka vastaa sovelluksen käyttöliittymästä
     """
+
     def __init__(self, root):
         """UI-luokan kontruktori jossa luodaan luokka, joka vastaa käyttöliittymästä.
 

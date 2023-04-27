@@ -4,6 +4,7 @@ from tkinter import ttk, constants
 class WelcomeView:
     """Sovelluksen aloitusnäkymä, jossa käyttäjä ohjataan kirjautumaan sisään tai adoptoimaan uuden lemmikin.
     """
+
     def __init__(self, root, handle_show_login_view, handle_show_adopt_view):
         """WelcomeView-luokan kontruktori, jossa luodaan aloitusnäkymä.
 

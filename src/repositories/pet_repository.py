@@ -9,6 +9,7 @@ def locate_pet_by_row(row):
 class PetRepository:
     """Luokka, joka vastaa käyttäjän ja tietokannan välisestä tietojenkäsittelystä.
     """
+
     def __init__(self, connection):
         """PetRepository-luokan konstruktori.
 

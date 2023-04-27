@@ -5,6 +5,7 @@ import sys
 class CloseGameView:
     """Pelin lopetusnäkymä.
     """
+
     def __init__(self, root, handle_back):
         """CloseGameView-luokan konstruktori, jossa luodaan lopetusnäkymä.
 

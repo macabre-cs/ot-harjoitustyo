@@ -5,6 +5,7 @@ from services.pet_service import pet_service, PetNameAlreadyInUseError
 class AdoptView:
     """Virtuaalilemmikin adoptointinäkymä, jossa käyttäjä voi ''rekisteröityä''.
     """
+
     def __init__(self, root, handle_adopt_pet, handle_show_login_view):
         """AdoptView-luokan konstruktori, jossa luodaan adoptointinäkymä.
 

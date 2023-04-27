@@ -5,6 +5,7 @@ from services.pet_service import pet_service, InvalidCredentialsError
 class LoginView:
     """Sovelluksen kirjautumisnäkymä, jossa käyttäjä voi kirjautua sisään.
     """
+
     def __init__(self, root, handle_login, handle_show_adopt_pet_view):
         """LoginView-luokan konstruktori, jossa luodaan kirjautumisnäkymä.
 

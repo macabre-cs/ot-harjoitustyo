@@ -10,6 +10,7 @@ from repositories.pet_repository import pet_repository
 class MainView:
     """Sovelluksen päänäkymä.
     """
+
     def __init__(self, root, handle_close_game):
         """MainView-luokan konstruktori, jossa luodaan päänäkymä.
 
