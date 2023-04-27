@@ -29,3 +29,7 @@
 - Luotu uusi luokka LoginView, joka vastaa jo olemassa olevan virtuaalilemmikin kirjautumisnäkymästä.
 - Testattu luokan PetRepository toimivuutta (lemmikin luominen ja etsiminen nimellä sekä pelaajan rankaiseminen).
 - Aloitettu luokan PetService testaus (nykyisen lemmikin hakeminen).
+
+## Viikko 6
+- Jatkettu luokan PetService testausta.
+- Tehty graafisesta käyttöliittymästä esteettisempi.
