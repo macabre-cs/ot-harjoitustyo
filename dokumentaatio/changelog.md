@@ -31,5 +31,9 @@
 - Aloitettu luokan PetService testaus (nykyisen lemmikin hakeminen).
 
 ## Viikko 6
+- Lisätty uusi ''Logout''-nappi. Käyttäjä voi nyt kirjata lemmikkinsä ulos (nappi on pelin lopetusnäkymässä). Uloskirjautuessa sovellus avaa aloitusnäkymän, eikä sammuta sovellusta.
 - Jatkettu luokan PetService testausta.
-- Tehty graafisesta käyttöliittymästä esteettisempi.
+- Jatkettu luokan PetRepository testausta.
+- Aloitettu graafisen käyttöliittymän söpöyttäminen.
+
+<img src="https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/alustava_kayttoliittymaV2.png" alt="Kuva söpömmästä alustavasta käyttöliittymästä." width="320" height="250">
