@@ -15,5 +15,5 @@
 | 26.4 | 3 | docstringejä ja pieniä korjauksia koodiin |
 | 27.4 | 7 | testien kirjoittamista, testaamista, dokumentointia, graafisen käyttöliittymän söpöyttämistä |
 | 28.4 | 1 | docstringien kirjoittelua |
-| 2.5 | 3 | testien kirjoittamista, testausta, uuden napin (logout) tekeminen |
+| 2.5 | 3 | testien kirjoittamista, testausta, dokumentointia, uuden napin (logout) tekeminen |
 | yht | 58 |
