@@ -19,6 +19,14 @@ class PetRepository:
         self._connection = connection
 
     def create(self, pet):
+        """Tallentaa lemmikin tietokantaan.
+
+        Args:
+            pet (olio): Pet-olio, joka tallennetaan tietokantaan.
+
+        Returns:
+            olio: Pet-oliona tallennettu lemmikki
+        """
         cursor = self._connection.cursor()
 
         cursor.execute(
@@ -31,6 +39,14 @@ class PetRepository:
         return pet
 
     def locate_pet_by_name(self, name):
+        """Etsii lemmikin tietokannasta lemmikin nimellä.
+
+        Args:
+            name (str): Lemmikin nimi, jonka Pet-olio palautetaan.
+
+        Returns:
+            olio tai None: Pet-olio, joka palautetaan, jos lemmikki löytyy tietokannasta. Jos ei löydy palautetaan None.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute(
@@ -43,6 +59,11 @@ class PetRepository:
         return locate_pet_by_row(row)
 
     def punish_player(self, name):
+        """Etsii pelaajan nykyisen lemmikin nimellä lemmikin, joka poistetaan tietokannasta.
+
+        Args:
+            name (str): Lemmikin nimi.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute(
@@ -53,6 +74,8 @@ class PetRepository:
         self._connection.commit()
 
     def cleanup_data(self):
+        """Kutsutaan vain jos lemmikki poistetaan tietokannasta. Tämä poistaa tietokannasta tyhjäksi jääneen rivin.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute(
@@ -62,6 +85,8 @@ class PetRepository:
         self._connection.commit()
 
     def delete_all_pets(self):
+        """Poistaa kaikki lemmikit tietokannasta.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM pets;")
@@ -69,6 +94,11 @@ class PetRepository:
         self._connection.commit()
 
     def locate_all_pets(self):
+        """Etsii kaikki lemmikit tietokannasta.
+
+        Returns:
+            list: Palauttaa listan Pet-olioita.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute("SELECT * FROM pets;")
