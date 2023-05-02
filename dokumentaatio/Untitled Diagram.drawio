@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" modified="2023-05-02T08:01:12.894Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="eTy-eTc-DGZM6YmKp4mg" version="21.2.4" type="github">
+  <diagram name="Page-1" id="G-v6_RGnaQGOJiJ1x90J">
+    <mxGraphModel dx="992" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-2" value="ui" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-3" value="- WelcomeView&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- LoginView&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- AdoptView&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- MainView&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- CloseGameView" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" vertex="1" parent="t_qIiuDGkBoSycZpFQQD-2">
+          <mxGeometry width="190" height="84" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-9" value="services" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="60" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-10" value="- PetService" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" vertex="1" parent="t_qIiuDGkBoSycZpFQQD-9">
+          <mxGeometry width="150" height="70" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-11" value="repositories" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-12" value="- PetRepository" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" vertex="1" parent="t_qIiuDGkBoSycZpFQQD-11">
+          <mxGeometry width="150" height="70" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-13" value="entities" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t_qIiuDGkBoSycZpFQQD-14" value="- Pet" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" vertex="1" parent="t_qIiuDGkBoSycZpFQQD-13">
+          <mxGeometry width="150" height="70" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
