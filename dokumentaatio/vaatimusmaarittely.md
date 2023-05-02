@@ -30,5 +30,5 @@ Virtuaalilemmikin on kuvittanut ystäväni [Haze Laine](https://www.instagram.co
   - Virtuaalilemmikin voi laittaa nukkumaan
   - Virtuaalilemmikin voi pestä
   - Muita hauskoja tai kamalia toimintoja
-- Esteettisempi käyttöliittymä
+- Esteettisempi käyttöliittymä (aloitettu)
 - Mahdollisuus vaihtaa käyttöliittymän kieli japaniksi *(olisi söpö tribuutti alkuperäiselle tamagotchille)*
