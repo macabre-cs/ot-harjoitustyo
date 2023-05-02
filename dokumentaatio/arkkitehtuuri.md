@@ -20,12 +20,9 @@ Sovelluksen [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/maste
 
 Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokka, joka sisältää kirjautumiseen ja tietokannasta tiedon hakemiseen liittyviä toimintoja. [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka taas vastaa tiedon käsittelystä tietokannassa, kuten esimerkiksi virtuaalilemmikin tietojen kirjaamisesta tietokantaan. Luokka [Pet](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/entities/pet.py), on luokka joka kuvaa käyttäjän virtuaalilemmikkiä.
 
-```mermaid
-classDiagram
-  class Pet
-  Pet : name
-  Pet : password
-```
+Alustava koko sovellusta kuvaava kaavio. Kaaviossa on sovelluksen pakkaukset ja niiden luokat.
+
+![Alustava koko sovellusta kuvaava kaavio](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluskavio.drawio.png)
 
 ## Tietojen tallentaminen
 
