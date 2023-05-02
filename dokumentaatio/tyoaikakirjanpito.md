@@ -14,4 +14,6 @@
 | 25.4 | 5 | dokumentointia, sovelluksen testaamista ja ui:n suunnittelua |
 | 26.4 | 3 | docstringejä ja pieniä korjauksia koodiin |
 | 27.4 | 7 | testien kirjoittamista, testaamista, dokumentointia, graafisen käyttöliittymän söpöyttämistä |
-| yht | 54 |
+| 28.4 | 1 | docstringien kirjoittelua |
+| 2.5 | 3 | testien kirjoittamista, testausta, uuden napin (logout) tekeminen |
+| yht | 58 |
