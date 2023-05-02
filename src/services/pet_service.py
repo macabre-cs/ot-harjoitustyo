@@ -16,8 +16,9 @@ class PetNameAlreadyInUseError(Exception):
 class PetService:
     """Luokka, joka vastaa käyttäjän ja tietokannan välisestä toiminnallisuudesta.
     """
+
     def __init__(self, pet_repository=default_pet_repository):
-        """PetService-luokan konstruktori, jossa luodaan määritellystä toiminnallisuudesta vastaava palvelu.
+        """Luokan konstruktori, jossa luodaan määritellystä toiminnallisuudesta vastaava palvelu.
 
         Args:
             pet_repository (olio): Olio, jolla on PetRepository-luokan metodit.
@@ -34,7 +35,7 @@ class PetService:
             login (bool): Oletuksena True. Kirjaa lemmikin sisään, jos adoptointi onnistuu.
 
         Raises:
-            PetNameAlreadyInUseError: Jos yritetään luoda lemmikkiä, jonka nimi on jo käytössä tapahtuva virhe.
+            PetNameAlreadyInUseError: Virhe. Tapahtuu kun luodaan lemmikki, jonka nimi on käytössä.
 
         Returns:
             olio: Pet-olio luodusta lemmikistä. 
@@ -53,6 +54,18 @@ class PetService:
         return pet
 
     def login_pet(self, name, password):
+        """Kirjaa lemmikin sisään.
+
+        Args:
+            name (str): Lemmikin nimi.
+            password (str): Lemmikin salasana.
+
+        Raises:
+            InvalidCredentialsError: Jos nimi ja salasana eivät ole oikein tapahtuva virhe.
+
+        Returns:
+            olio: Palauttaa sisään kirjatun lemmikin Pet-olion.
+        """
 
         pet = self._pet_repository.locate_pet_by_name(name)
 
@@ -65,7 +78,18 @@ class PetService:
         return pet
 
     def get_current_pet(self):
+        """Palauttaa lemmikin, joka on kirjattu sisään.
+
+        Returns:
+            olio: Palauttaa sisään kirjatun lemmikin Pet-olion.
+        """
         return self._pet
+
+    def logout(self):
+        """Kirjaa ulos lemmikin, joka on kirjattu sisään.
+        """
+
+        self._pet = None
 
 
 pet_service = PetService()

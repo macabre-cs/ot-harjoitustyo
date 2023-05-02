@@ -45,7 +45,7 @@ class PetRepository:
             name (str): Lemmikin nimi, jonka Pet-olio palautetaan.
 
         Returns:
-            olio tai None: Pet-olio, joka palautetaan, jos lemmikki löytyy tietokannasta. Jos ei löydy palautetaan None.
+            Pet-olio, jos lemmikki löytyy tietokannasta. Jos ei löydy palautetaan None.
         """
         cursor = self._connection.cursor()
 
@@ -74,7 +74,7 @@ class PetRepository:
         self._connection.commit()
 
     def cleanup_data(self):
-        """Kutsutaan vain jos lemmikki poistetaan tietokannasta. Tämä poistaa tietokannasta tyhjäksi jääneen rivin.
+        """Kutsutaan jos lemmikki poistetaan tietokannasta. Poistaa tietokannasta tyhjän rivin.
         """
         cursor = self._connection.cursor()
 

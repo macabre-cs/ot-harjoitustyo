@@ -35,6 +35,9 @@ class UI:
     def _handle_back(self):
         self._show_main_view()
 
+    def _handle_logout(self):
+        self._show_welcome_view()
+
     def _show_main_view(self):
         self._hide_current_view()
 
@@ -45,7 +48,8 @@ class UI:
     def _show_close_game_view(self):
         self._hide_current_view()
 
-        self._current_view = CloseGameView(self._root, self._handle_back)
+        self._current_view = CloseGameView(
+            self._root, self._handle_back, self._handle_logout)
 
         self._current_view.pack()
 

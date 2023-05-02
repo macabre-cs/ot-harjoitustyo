@@ -43,6 +43,6 @@ class WelcomeView:
         register_button = ttk.Button(
             master=self._frame, text="I don't have a pet yet", style="game.TButton", command=self._handle_show_adopt_view)
 
-        welcome_label.place(x=200, y=100)
-        login_button.place(x=30, y=370)
-        register_button.place(x=330, y=370)
+        welcome_label.place(relx=0.5, rely=0.3, anchor="center")
+        login_button.place(relx=0.25, rely=0.7, anchor="center")
+        register_button.place(relx=0.73, rely=0.7, anchor="center")
