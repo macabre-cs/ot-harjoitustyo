@@ -3,6 +3,7 @@
 Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään. Pelin idea on saanut paljon inspiraatiota [Tamagotcheista](https://fi.wikipedia.org/wiki/Tamagotchi).
 
 ## Dokumentaatio
+- [Käyttöohje](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
@@ -11,7 +12,7 @@ Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmik
 
 ## Release
 
-Tuorein release löytyy [täältä](https://github.com/macabre-cs/ot-harjoitustyo/releases/tag/viikko5).
+Sovelluksen releaset löytyy [täältä](https://github.com/macabre-cs/ot-harjoitustyo/releases).
 
 ## Asennus
 
