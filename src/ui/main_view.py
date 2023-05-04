@@ -23,7 +23,8 @@ class MainView:
         self._handle_close_game = handle_close_game
         self._frame = None
         self._pet = pet_service.get_current_pet()
-
+        self._progress_bar = None
+ 
         apply_style()
         self._initialize()
 
@@ -40,35 +41,11 @@ class MainView:
     def _initialize(self):
         self._frame = ttk.Frame(
             master=self._root, style="game.TFrame", width=640, height=500)
-        name_label = ttk.Label(
-            master=self._frame, text=f"{self._pet.name}", style="name.TLabel")
-        button1 = ttk.Button(master=self._frame, text="Love", style="game.TButton",
-                             command=self._love_clicked)
-        button2 = ttk.Button(master=self._frame, text="Feed", style="game.TButton",
-                             command=self._feed_clicked)
-        button3 = ttk.Button(
-            master=self._frame, text="Hurt :(", style="game.TButton", command=self._hurt_clicked)
 
-        button4 = ttk.Button(
-            master=self._frame, text="Close game", style="game.TButton", command=self._handle_close_game)
-
-        graphics_folder = Path(
-            __file__).parent.parent.parent / "data"/"graphics"
-
-        pet_image = Image.open(graphics_folder/"Rotta_Otus_300x300.png")
-
-        photo = ImageTk.PhotoImage(pet_image)
-
-        pet_img_label = ttk.Label(
-            master=self._frame, style="bgcolor.TLabel", image=photo)
-        pet_img_label.image = photo
-
-        name_label.place(x=200, y=30, width=240, height=40)
-        pet_img_label.place(x=170, y=90)
-        button1.place(x=50, y=420)
-        button2.place(x=190, y=420)
-        button3.place(x=330, y=420)
-        button4.place(x=470, y=420)
+        self._create_progress_bar()
+        self._create_buttons()
+        self._create_image()
+        self._create_name_label()
 
     def _love_clicked(self):
         love_choices = ["You gave your virtual pet some headpats!",
@@ -76,6 +53,7 @@ class MainView:
                         "You gave your virtual pet a hug!",
                         "You gave your virtual pet your credit card information!"]
         messagebox.showinfo(message=random.choice(love_choices))
+        self._progress(20)
 
     def _feed_clicked(self):
         food_choices = ["You gave your virtual pet some spaghetti!",
@@ -83,6 +61,7 @@ class MainView:
                         "You gave your virtual pet some potato chips!",
                         "You gave your virtual pet some leftovers!"]
         messagebox.showinfo(message=random.choice(food_choices))
+        self._progress(10)
 
     def _hurt_clicked(self):
         hurt_choices = [":(",
@@ -93,3 +72,58 @@ class MainView:
         pet_repository.punish_player(self._pet.name)
         pet_repository.cleanup_data()
         sys.exit()
+
+    def _create_name_label(self):
+        name_label = ttk.Label(
+            master=self._frame, text=f"{self._pet.name}", style="name.TLabel")
+
+        name_label.place(x=200, y=30, width=240, height=40)
+
+    def _create_image(self):
+        graphics_folder = Path(
+            __file__).parent.parent.parent / "data"/"graphics"
+
+        pet_image = Image.open(graphics_folder/"Rotta_Otus_300x300.png")
+
+        photo = ImageTk.PhotoImage(pet_image)
+
+        pet_img_label = ttk.Label(
+            master=self._frame, style="bgcolor.TLabel", image=photo)
+
+        pet_img_label.image = photo
+
+        pet_img_label.place(x=170, y=90)
+
+    def _create_buttons(self):
+        button1 = ttk.Button(master=self._frame, text="Love", style="game.TButton",
+                             command=self._love_clicked)
+        button2 = ttk.Button(master=self._frame, text="Feed", style="game.TButton",
+                             command=self._feed_clicked)
+        button3 = ttk.Button(
+            master=self._frame, text="Hurt :(", style="game.TButton", command=self._hurt_clicked)
+
+        button4 = ttk.Button(
+            master=self._frame, text="Close game", style="game.TButton", command=self._handle_close_game)
+
+        button1.place(x=50, y=420)
+        button2.place(x=190, y=420)
+        button3.place(x=330, y=420)
+        button4.place(x=470, y=420)
+
+    def _create_progress_bar(self):
+        self._progress_bar = ttk.Progressbar(
+            master=self._frame, style="game.Vertical.TProgressbar", orient="vertical", length=300, mode="determinate")
+        self._progress_bar["value"] = pet_service.get_progress()
+        self._progress_bar.place(x=30, y=80)
+
+    def _progress(self, progress: int):
+        if self._progress_bar["value"] < 100:
+            self._progress_bar["value"] += progress
+            self._save_progress()
+        if self._progress_bar["value"] >= 100:
+            messagebox.showinfo(message="Your virtual pet loves you!")
+            self._save_progress()
+
+    def _save_progress(self):
+        self._pet.progress = self._progress_bar["value"]
+        pet_repository.save_progress(self._pet.progress, self._pet.name)

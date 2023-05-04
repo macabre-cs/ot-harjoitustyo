@@ -80,7 +80,7 @@ class AdoptView:
             return
 
         try:
-            pet_service.adopt_pet(pet_name, password)
+            pet_service.adopt_pet(pet_name, password, 0)
             self._handle_adopt_pet()
         except PetNameAlreadyInUseError:
             messagebox.showerror("Pet already exists error",

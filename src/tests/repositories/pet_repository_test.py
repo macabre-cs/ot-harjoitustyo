@@ -6,8 +6,8 @@ from repositories.pet_repository import pet_repository
 class TestPetRepository(unittest.TestCase):
     def setUp(self):
         pet_repository.delete_all_pets()
-        self.pet_mansikki = Pet("Mansikki", "mansikka")
-        self.pet_omenikki = Pet("Omenikki", "omena")
+        self.pet_mansikki = Pet("Mansikki", "mansikka", 0)
+        self.pet_omenikki = Pet("Omenikki", "omena", 0)
 
     def test_locate_pet_by_name(self):
         pet_repository.create(self.pet_mansikki)

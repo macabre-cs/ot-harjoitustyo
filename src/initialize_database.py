@@ -27,7 +27,8 @@ def make_tables(connection):
     cursor.execute("""
         create table pets (
             name text primary key,
-            password text
+            password text,
+            progress integer
         );
     """)
 

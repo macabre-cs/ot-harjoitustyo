@@ -26,7 +26,7 @@ class PetService:
         self._pet = None
         self._pet_repository = pet_repository
 
-    def adopt_pet(self, name, password, login=True):
+    def adopt_pet(self, name, password, progress, login=True):
         """Luo uuden lemmikin. Kirjaa myös sisään tarvittaessa.
 
         Args:
@@ -46,7 +46,7 @@ class PetService:
         if existing_pet:
             raise PetNameAlreadyInUseError(f"{name} already exists!")
 
-        pet = self._pet_repository.create(Pet(name, password))
+        pet = self._pet_repository.create(Pet(name, password, progress))
 
         if login:
             self._pet = pet
@@ -90,6 +90,9 @@ class PetService:
         """
 
         self._pet = None
+
+    def get_progress(self):
+        return self._pet.progress
 
 
 pet_service = PetService()

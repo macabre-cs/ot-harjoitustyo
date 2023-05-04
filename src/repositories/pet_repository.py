@@ -3,7 +3,7 @@ from database_connection import get_database_connection
 
 
 def locate_pet_by_row(row):
-    return Pet(row["name"], row["password"]) if row else None
+    return Pet(row["name"], row["password"], row["progress"]) if row else None
 
 
 class PetRepository:
@@ -30,8 +30,8 @@ class PetRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "INSERT INTO pets (name, password) VALUES (?, ?);",
-            (pet.name, pet.password)
+            "INSERT INTO pets (name, password, progress) VALUES (?, ?, ?);",
+            (pet.name, pet.password, pet.progress)
         )
 
         self._connection.commit()
@@ -106,6 +106,15 @@ class PetRepository:
         rows = cursor.fetchall()
 
         return list(map(locate_pet_by_row, rows))
+
+    def save_progress(self, progress, name):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            "UPDATE pets SET progress=? WHERE name=?;", (progress, name))
+
+        self._connection.commit()
 
 
 pet_repository = PetRepository(get_database_connection())

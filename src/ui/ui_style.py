@@ -15,3 +15,4 @@ def apply_style():
     s.configure("bgcolor.TLabel", background="#fff0f5")
     s.configure("name.TLabel", font=("Terminal", 16), background="#ccf0f8",
                 borderwidth=3, relief="raised", anchor="center")
+    s.configure("game.Vertical.TProgressbar", throughcolor = "#add8e6", background="#fddde6", bordercolor="#add8e6", borderwidth=3)

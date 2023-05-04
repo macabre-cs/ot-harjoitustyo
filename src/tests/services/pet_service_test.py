@@ -30,10 +30,10 @@ class MockPetRepository:
 class TestPetService(unittest.TestCase):
     def setUp(self):
         self.pet_service = PetService(MockPetRepository())
-        self.pet_mustikki = Pet("Mustikki", "mustikka")
+        self.pet_mustikki = Pet("Mustikki", "mustikka", 0)
 
     def login_test_pet(self, pet):
-        self.pet_service.adopt_pet(pet.name, pet.password)
+        self.pet_service.adopt_pet(pet.name, pet.password, 0)
 
     def test_locate_current_pet(self):
         self.login_test_pet(self.pet_mustikki)
@@ -44,7 +44,7 @@ class TestPetService(unittest.TestCase):
 
     def test_valid_login(self):
         self.pet_service.adopt_pet(
-            self.pet_mustikki.name, self.pet_mustikki.password)
+            self.pet_mustikki.name, self.pet_mustikki.password, 0)
 
         pet = self.pet_service.login_pet(
             self.pet_mustikki.name, self.pet_mustikki.password)
@@ -58,7 +58,7 @@ class TestPetService(unittest.TestCase):
     def test_adopt_pet_that_exists(self):
         name = self.pet_mustikki.name
 
-        self.pet_service.adopt_pet(name, "mustikkavale")
+        self.pet_service.adopt_pet(name, "mustikkavale", 0)
 
         self.assertRaises(PetNameAlreadyInUseError,
-                          self.pet_service.adopt_pet, name, "valemustikka")
+                          self.pet_service.adopt_pet, name, "valemustikka", 0)
