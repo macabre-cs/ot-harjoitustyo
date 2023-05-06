@@ -37,3 +37,14 @@
 - Aloitettu graafisen käyttöliittymän söpöyttäminen.
 
 <img src="https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/alustava_kayttoliittymaV2.png" alt="Kuva söpömmästä alustavasta käyttöliittymästä." width="320" height="250">
+
+## Viikko 7
+- Ympäristömuuttujien käyttöönotto
+- Lisätty edistysmittari peliin
+- Lisätty käyttäjälle eri vaihtoehtoja lemmikin ulkomuotoon
+  - Virtuaalilemmikin on kuvittanut ystäväni [Haze Laine](https://www.instagram.com/hasuart_/).
+
+lemmikki 1 | lemmikki 2 | lemmikki 3
+--- | --- | ---
+![trans-lipun värinen lemmikki](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/data/graphics/Rotta_Otus_300x300.png) | ![pride-lipun värinen lemmikki](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/data/graphics/Homo_Rotta_Otus_300x300.png) | ![ace-lipun värinen lemmikki](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/data/graphics/Ace_Rotta_Otus_300x300.png)
+- Testit päivitetty testaamaan sovelluksen nykyistä toiminnallisuutta
