@@ -16,4 +16,7 @@
 | 27.4 | 7 | testien kirjoittamista, testaamista, dokumentointia, graafisen käyttöliittymän söpöyttämistä |
 | 28.4 | 1 | docstringien kirjoittelua |
 | 2.5 | 3 | testien kirjoittamista, testausta, dokumentointia, uuden napin (logout) tekeminen |
-| yht | 58 |
+| 3.5 | 3 | edistysmittarin lisääminen |
+| 4.5 | 1 | testien päivitystä ja pillow:iin tutustumista |
+| 6.5 | 6 | lemmikin ulkomuotovalikon tekeminen, testien päivitys, sovelluslogiikan eristämistä käyttöliittymän koodista, ympäristömuuttujien käyttöönotto |
+| yht | 68 |
