@@ -3,7 +3,7 @@ from database_connection import get_database_connection
 
 
 def locate_pet_by_row(row):
-    return Pet(row["name"], row["password"], row["progress"]) if row else None
+    return Pet(row["name"], row["password"], row["progress"], row["image"]) if row else None
 
 
 class PetRepository:
@@ -30,8 +30,8 @@ class PetRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "INSERT INTO pets (name, password, progress) VALUES (?, ?, ?);",
-            (pet.name, pet.password, pet.progress)
+            "INSERT INTO pets (name, password, progress, image) VALUES (?, ?, ?, ?);",
+            (pet.name, pet.password, pet.progress, pet.image)
         )
 
         self._connection.commit()

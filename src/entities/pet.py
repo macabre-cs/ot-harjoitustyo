@@ -6,7 +6,7 @@ class Pet:
         password (str): Virtuaalilemmikin salasana.    
     """
 
-    def __init__(self, name, password, progress=None):
+    def __init__(self, name, password, progress=None, image=None):
         """Pet-luokan konstruktori, jossa luodaan uusi virtuaalilemmikki.
 
         Args:
@@ -16,3 +16,4 @@ class Pet:
         self.name = name
         self.password = password
         self.progress = progress if progress is not None else 0
+        self.image = image if image is not None else ""

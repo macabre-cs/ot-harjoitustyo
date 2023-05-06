@@ -24,7 +24,7 @@ class MainView:
         self._frame = None
         self._pet = pet_service.get_current_pet()
         self._progress_bar = None
- 
+
         apply_style()
         self._initialize()
 
@@ -83,7 +83,7 @@ class MainView:
         graphics_folder = Path(
             __file__).parent.parent.parent / "data"/"graphics"
 
-        pet_image = Image.open(graphics_folder/"Rotta_Otus_300x300.png")
+        pet_image = Image.open(graphics_folder/self._pet.image)
 
         photo = ImageTk.PhotoImage(pet_image)
 
@@ -119,11 +119,9 @@ class MainView:
     def _progress(self, progress: int):
         if self._progress_bar["value"] < 100:
             self._progress_bar["value"] += progress
-            self._save_progress()
+            pet_service.save_progress(
+                self._progress_bar["value"], self._pet.name)
         if self._progress_bar["value"] >= 100:
             messagebox.showinfo(message="Your virtual pet loves you!")
-            self._save_progress()
-
-    def _save_progress(self):
-        self._pet.progress = self._progress_bar["value"]
-        pet_repository.save_progress(self._pet.progress, self._pet.name)
+            pet_service.save_progress(
+                self._progress_bar["value"], self._pet.name)

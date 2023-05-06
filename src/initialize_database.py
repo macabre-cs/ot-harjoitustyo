@@ -28,7 +28,8 @@ def make_tables(connection):
         create table pets (
             name text primary key,
             password text,
-            progress integer
+            progress integer,
+            image text
         );
     """)
 
