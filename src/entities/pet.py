@@ -12,6 +12,8 @@ class Pet:
         Args:
             name (str): Virtuaalilemmikin nimi.
             password (str): Virtuaalilemmikin salasana.
+            progress (int): Lemmikin rakkausmittarin arvo.
+            pet_img (str): Lemmikin kuvan nimi.
         """
         self.name = name
         self.password = password

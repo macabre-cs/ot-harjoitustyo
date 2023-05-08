@@ -32,6 +32,8 @@ class PetService:
         Args:
             name (str): Lemmikin nimi.
             password (str): Lemmikin salasana.
+            progress (int): Lemmikin rakkausmittarin arvo.
+            pet_img (str): Lemmikin kuvan nimi.
             login (bool): Oletuksena True. Kirjaa lemmikin sisään, jos adoptointi onnistuu.
 
         Raises:
@@ -93,12 +95,31 @@ class PetService:
         self._pet = None
 
     def get_progress(self):
+        """Palauttaa lemmikin rakkausmittarin arvon.
+
+        Returns:
+            int tai None: Lemmikin rakkausmittarin edistystä kuvaava arvo.
+        """
         return self._pet.progress
 
     def save_progress(self, progress, name):
+        """Tallentaa lemmikin rakkausmittarin edistyksen tietokantaan.
+
+        Args:
+            progress (int): Lemmikin rakkausmittarin edistystä kuvaava arvo.
+            name (str): Lemmikin nimi.
+        """
         self._pet_repository.save_progress(progress, name)
 
     def get_pet_img(self, value):
+        """Palauttaa käyttäjän valitseman lemmikin kuvan nimen.
+
+        Args:
+            value (int): Muuttuja, joka saa arvokseen käyttäjän valitseman kuvan tunnisteen.
+
+        Returns:
+            str: Value-muuttujaa vastaava lemmikin kuva.
+        """
         if value == 1:
             image_name = "Rotta_Otus_300x300.png"
         if value == 2:

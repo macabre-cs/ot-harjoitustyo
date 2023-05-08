@@ -3,6 +3,8 @@ from tkinter import ttk
 
 
 def apply_style():
+    """Sovelluksen graafisen käyttöliittymän tyylistä vastaava funktio.
+    """
     s = ttk.Style()
     s.configure("game.TFrame", background="#fff0f5",
                 borderwidth=12, relief="raised")

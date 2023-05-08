@@ -108,6 +108,12 @@ class PetRepository:
         return list(map(locate_pet_by_row, rows))
 
     def save_progress(self, progress, name):
+        """Tallentaa lemmikin rakkausmittarin tilan tietokantaan.
+
+        Args:
+            progress (int): Lemmikin rakkausmittarin edistystä kuvaava arvo.
+            name (str): Lemmikin nimi
+        """
 
         cursor = self._connection.cursor()
 

@@ -24,7 +24,6 @@ class AdoptView:
         self._pet_name_entry = None
         self._password_entry = None
         self._var = IntVar()
-        # self._pet_var = None
 
         apply_style()
         self._initialize()

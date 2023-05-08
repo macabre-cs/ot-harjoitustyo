@@ -26,6 +26,8 @@ class TestPetRepository(unittest.TestCase):
         self.assertEqual(len(all_pets), 1)
         self.assertEqual(all_pets[0].name, self.pet_mansikki.name)
         self.assertEqual(all_pets[0].password, self.pet_mansikki.password)
+        self.assertEqual(all_pets[0].progress, self.pet_mansikki.progress)
+        self.assertEqual(all_pets[0].image, self.pet_mansikki.image)
 
     def test_punish_player(self):
         pet_repository.create(self.pet_mansikki)
@@ -57,3 +59,12 @@ class TestPetRepository(unittest.TestCase):
         all_pets = pet_repository.locate_all_pets()
 
         self.assertEqual(len(all_pets), 0)
+
+    def test_save_progress(self):
+        pet_repository.create(self.pet_omenikki)
+
+        pet_repository.save_progress(20, self.pet_omenikki.name)
+
+        pet = pet_repository.locate_pet_by_name(self.pet_omenikki.name)
+
+        self.assertEqual(pet.progress, 20)
