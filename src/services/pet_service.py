@@ -126,6 +126,8 @@ class PetService:
             image_name = "Homo_Rotta_Otus_300x300.png"
         if value == 3:
             image_name = "Ace_Rotta_Otus_300x300.png"
+        if value == 0:
+            return
         return image_name
 
 

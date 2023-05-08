@@ -12,7 +12,7 @@ def apply_style():
                 background="#ccf0f8", borderwidth=3, relief="raised")
     s.configure("game.TLabel", font=("Terminal", 16), background="#fff0f5")
     s.configure("gamev2.TLabel", font=("Terminal", 13),
-                background="#fff0f5", justify="center")
+                background="#fff0f5", justify="center", anchor="center")
     s.configure("game.TEntry", font=("Terminal", 10),
                 backround="#f0f8ff", relief="raised")
     s.configure("bgcolor.TLabel", background="#fff0f5")
@@ -22,3 +22,5 @@ def apply_style():
                 background="#fddde6", bordercolor="#add8e6", borderwidth=3)
     s.configure("game.TRadiobutton", background="#ccf0f8", font=("Terminal", 12), indicatorcolor="#fddde6",
                 relief="raised", indicatorbackground="#fddde6", indicatorrelief="raised", highlightcolor="#f0f8ff", fg="#fddde6")
+    s.configure("welcome.TLabel", font=("Terminal", 16), background="#ccf0f8",
+                borderwidth=3, relief="raised", padding=8, width=14, anchor="center")

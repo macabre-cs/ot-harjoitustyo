@@ -77,7 +77,13 @@ class MainView:
         name_label = ttk.Label(
             master=self._frame, text=f"{self._pet.name}", style="name.TLabel")
 
-        name_label.place(x=200, y=30, width=240, height=40)
+        extra_width = 0
+
+        if len(self._pet.name) > 13:
+            extra_width = (len(self._pet.name)-13)*18
+
+        name_label.place(relx=0.5, rely=0.1, width=240 +
+                         extra_width, height=40, anchor="center")
 
     def _create_image(self):
         graphics_folder = Path(

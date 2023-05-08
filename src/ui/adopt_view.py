@@ -59,20 +59,22 @@ class AdoptView:
             master=self._frame, text="Name your new pet!", style="gamev2.TLabel")
 
         self._pet_name_entry = ttk.Entry(
-            master=self._frame, style="game.TEntry")
+            master=self._frame, style="game.TEntry", font=("Terminal", 10))
 
-        pet_name_label.place(x=200, y=50)
-        self._pet_name_entry.place(x=200, y=100, width=250, height=30)
+        pet_name_label.place(relx=0.5, rely=0.13, anchor="center")
+        self._pet_name_entry.place(
+            relx=0.5, rely=0.23, anchor="center", width=250, height=30)
 
     def _create_password_field(self):
         password_label = ttk.Label(
             master=self._frame, text="Secret word only you and your pet will know", style="gamev2.TLabel")
 
         self._password_entry = ttk.Entry(
-            master=self._frame, style="game.TEntry")
+            master=self._frame, show="*", font=("Terminal", 10))
 
-        password_label.place(x=40, y=150)
-        self._password_entry.place(x=200, y=200, width=250, height=30)
+        password_label.place(relx=0.5, rely=0.33, anchor="center")
+        self._password_entry.place(
+            relx=0.5, rely=0.43, anchor="center", width=250, height=30)
 
     def _create_pet_chooser(self):
         option1 = ttk.Radiobutton(master=self._frame, text="Option 1", variable=self._var,
@@ -87,8 +89,9 @@ class AdoptView:
         option3.place(x=40, y=350)
 
     def _create_selected_pet(self):
-        self._create_selection_label()
-        self._create_pet_image()
+        if self._var.get() == 1 or self._var.get() == 2 or self._var.get() == 3:
+            self._create_selection_label()
+            self._create_pet_image()
 
     def _create_pet_image(self):
 
@@ -122,9 +125,19 @@ class AdoptView:
         password = self._password_entry.get()
         pet_img = pet_service.get_pet_img(self._var.get())
 
-        if pet_name == "" or password == "" or pet_img == None:
+        if len(pet_name) > 21:
+            messagebox.showerror(
+                "Pet name is too long error", "Pet name is too long!")
+            return
+
+        if self._var.get() == 0:
+            messagebox.showerror("Pet not selected error",
+                                 "Please select a pet first")
+            return
+
+        if pet_name == "" or password == "":
             messagebox.showerror("Empty field error",
-                                 "Name, secret word and pet are required")
+                                 "Name and secret word are required")
             return
 
         try:

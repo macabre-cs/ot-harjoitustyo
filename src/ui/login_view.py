@@ -47,28 +47,30 @@ class LoginView:
         adopt_pet_button = ttk.Button(
             master=self._frame, text="Wait I don't have a pet yet", style="game.TButton", command=self._handle_show_adopt_pet_view)
 
-        login_pet_button.place(x=190, y=320)
-        adopt_pet_button.place(x=150, y=400)
+        login_pet_button.place(relx=0.5, rely=0.70, anchor="center")
+        adopt_pet_button.place(relx=0.5, rely=0.85, anchor="center")
 
     def _create_pet_name_field(self):
         pet_name_label = ttk.Label(
             master=self._frame, text="Pet name", style="gamev2.TLabel")
 
         self._pet_name_entry = ttk.Entry(
-            master=self._frame, style="game.TEntry")
+            master=self._frame, style="game.TEntry", font=("Terminal", 10))
 
-        pet_name_label.place(x=260, y=50)
-        self._pet_name_entry.place(x=200, y=100, width=250, height=30)
+        pet_name_label.place(relx=0.5, rely=0.13, anchor="center")
+        self._pet_name_entry.place(
+            relx=0.5, rely=0.23, anchor="center", width=250, height=30)
 
     def _create_password_field(self):
         password_label = ttk.Label(
             master=self._frame, text="Secret word", style="gamev2.TLabel")
 
         self._password_entry = ttk.Entry(
-            master=self._frame, style="game.TEntry")
+            master=self._frame, style="game.TEntry", show="*", font=("Terminal", 10))
 
-        password_label.place(x=250, y=150)
-        self._password_entry.place(x=200, y=200, width=250, height=30)
+        password_label.place(relx=0.5, rely=0.33, anchor="center")
+        self._password_entry.place(
+            relx=0.5, rely=0.43, anchor="center", width=250, height=30)
 
     def _login_handler(self):
         pet_name = self._pet_name_entry.get()

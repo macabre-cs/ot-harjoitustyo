@@ -36,7 +36,7 @@ class WelcomeView:
         self._frame = ttk.Frame(
             master=self._root, style="game.TFrame", width=640, height=500)
         welcome_label = ttk.Label(
-            master=self._frame, style="game.TLabel", text="Welcome back?")
+            master=self._frame, style="welcome.TLabel", text="Welcome back?")
 
         login_button = ttk.Button(
             master=self._frame, text="I already have a pet", style="game.TButton", command=self._handle_show_login_view)
