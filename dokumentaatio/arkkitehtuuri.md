@@ -41,7 +41,7 @@ Sovelluksessa on kahdenlaisia toiminnallisuuksia.
 
 ### Virtuaalilemmikin luominen
 
-Sovelluksen avautuessa käyttäjän voi adoptoida uuden lemmikin painamalla nappia ''I dont't have a pet yet'', joka vie käyttäjän uuteen näkymään, jossa käyttäjä syöttää lemmikin nimen ja salasanan. Painamalla ''Adopt your new little friend!'' käyttäjä kirjataan sisään sovellukseen uudella lemmikillään.
+Sovelluksen avautuessa käyttäjän voi adoptoida uuden lemmikin painamalla nappia ''I dont't have a pet yet'', joka vie käyttäjän uuteen näkymään, jossa käyttäjä syöttää lemmikin nimen ja salasanan. Käyttäjän tulee myös valita minkä lemmikin valitsee kolmesta eri [vaihtoehdosta](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/data/graphics). Painamalla ''Adopt a pet!''-nappia käyttäjä kirjataan sisään sovellukseen uudella lemmikillään.
 
 *UI-luokka kutsuu sisällään eri näkymiä vaihtavia metodeja, mutta halusin kuvata sen seuraavalla tavalla sekvenssikaaviossa, koska muuten kaaviosta olisi tullut kovin tuhti ja sekava.*
 
@@ -63,19 +63,53 @@ sequenceDiagram
     User->>WelcomeView: click "I don't have a pet yet" button
     WelcomeView->>UI: _handle_show_adopt_view
     UI->>AdoptView: _show_adopt_pet_view()
-    User->>AdoptView: fills name and password entries and clicks "Adopt your new little friend!" button
+    User->>AdoptView: fills name and password entries, selects a pet and clicks "Adopt a pet!" button
     AdoptView->>PetService: adopt_pet("puolukki", "puolukka")
     PetService->>PetRepository: locate_pet_by_name("puolukki")
     PetRepository-->>PetService: None
-    PetService->>puolukki: Pet("puolukki", "puolukka")
-    PetService->>PetRepository: create("puolukki", "puolukka")
+    PetService->>puolukki: Pet("puolukki", "puolukka", 0, "placeholder_img_name")
+    PetService->>PetRepository: create("puolukki", "puolukka", 0, "placeholder_img_name")
     PetRepository-->>PetService: pet
     PetService-->>AdoptView: pet
     AdoptView->>UI: _handle_adopt_pet()
     UI->>MainView: _show_main_view() 
 
 ```
-Auki kirjoitettuna käyttäjän avattua sovelluksen ja painettua "I don't  have a pet yet" nappia, käyttäjä syöttää lemmikin nimen ja salasanan niille osoitetuille kentille ja painaa "Adopt your new little friend!" nappia. Tämän jälkeen PetService-luokka tarkistaa PetRepository luokalta, onko tämän niminen lemmikki jo tietokannassa. Tässä tapauksessa ei ole joten PetRepository-luokka palauttaa None. PetService kutsuu Pet-luokkaa, jossa luodaan puolukille Pet-olio. Sen jälkeen PetService-luokka kutsuu PetRepository-luokkaa, jossa kirjataan tietokantantaan uusi lemmikki puolukki, jonka jälkeen PetRepository luokka palauttaa sen takaisin PetService luokalle. Tämän jälkeen käyttäjälle avautuu pelin päänäkymä, jossa on hänen virtuaalilemmikkinsä.
+Auki kirjoitettuna käyttäjän avattua sovelluksen ja painettua "I don't  have a pet yet" nappia, käyttäjä syöttää lemmikin nimen ja salasanan niille osoitetuille kentille, valitsee lemmikin ja painaa "Adopt a pet!" nappia. Tämän jälkeen PetService-luokka tarkistaa PetRepository luokalta, onko tämän niminen lemmikki jo tietokannassa. Tässä tapauksessa ei ole joten PetRepository-luokka palauttaa None. PetService kutsuu Pet-luokkaa, jossa luodaan puolukille Pet-olio. Sen jälkeen PetService-luokka kutsuu PetRepository-luokkaa, jossa kirjataan tietokantantaan uusi lemmikki puolukki, jonka jälkeen PetRepository luokka palauttaa sen takaisin PetService luokalle. Tämän jälkeen käyttäjälle avautuu pelin päänäkymä, jossa on hänen virtuaalilemmikkinsä.
+
+### Sisäänkirjautuminen
+
+Sovelluksen avautuessa käyttäjän voi kirjautua sisään luodulla lemmikillään painamalla nappia ''I already have a pet'', joka vie käyttäjän uuteen näkymään, jossa käyttäjä syöttää lemmikin nimen ja salasanan. Käyttäjä kirjataan sisään, jos kirjautuminen onnistuu ja sovellus avaa käyttäjälle pelin päänäkymän, jossa on hänen luomansa lemmikki.
+
+*UI-luokka kutsuu sisällään eri näkymiä vaihtavia metodeja, mutta halusin kuvata sen seuraavalla tavalla sekvenssikaaviossa, koska muuten kaaviosta olisi tullut kovin tuhti ja sekava.*
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant main
+    participant UI
+    participant WelcomeView
+    participant LoginView
+    participant PetService
+    participant PetRepository
+    participant MainView
+    
+    main->>UI: UI(window)
+    main->>UI: start()
+    UI->>WelcomeView: _show_welcome_view()
+    User->>WelcomeView: click "I already have a pet" button
+    WelcomeView->>UI: _handle_show_login_view
+    UI->>LoginView: _show_login_view()
+    User->>LoginView: fills name and password entries and clicks "Log in with your pet" button
+    LoginView->>PetService: login_pet("puolukki", "puolukka")
+    PetService->>PetRepository: locate_pet_by_name("puolukki")
+    PetRepository-->>PetService: pet
+    PetService-->>LoginView: pet
+    LoginView->>UI: _handle_login()
+    UI->>MainView: _show_main_view() 
+
+```
+Auki kirjoitettuna käyttäjän avattua sovelluksen ja painettua "I already have a pet" nappia, käyttäjä syöttää lemmikin nimen ja salasanan niille osoitetuille kentille ja painaa "Log in with your pet" nappia. Tämän jälkeen PetService-luokka tarkistaa PetRepository luokalta, onko tämän niminen lemmikki tietokannassa. Tässä tapauksessa on, joten PetRepository-luokka palauttaa lemmikin Pet-olion. Sen jälkeen PetService palauttaa lemmikin Pet-olion takaisin LoginView-luokalle, jossa kutsutaan käyttäjän kirjautumismetodia. Käyttäjälle avautuu pelin päänäkymä, jossa on hänen virtuaalilemmikkinsä.
 
 ## Sovelluksen heikkoudet
 
