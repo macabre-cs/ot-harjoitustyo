@@ -48,9 +48,9 @@ class CloseGameView:
             master=self._frame, text="LOGOUT", style="game.TButton", command=self._handle_logout)
 
         quit_label.place(x=170, y=100)
-        yes_button.place(x=170, y=370)
-        no_button.place(x=350, y=370)
-        logout_button.place(x=260, y=280)
+        yes_button.place(relx=0.25, rely=0.7, anchor="center")
+        no_button.place(relx=0.5, rely=0.7, anchor="center")
+        logout_button.place(relx=0.75, rely=0.7, anchor="center")
 
     def _yes_clicked(self):
         pet_service.logout()
