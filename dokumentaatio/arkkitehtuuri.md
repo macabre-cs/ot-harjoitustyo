@@ -4,6 +4,10 @@
 
 Kansio [ui](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/ui) sisältää koodit, jotka vastaavat sovelluksen käyttöliittymästä ja käyttöliittymälle olennaisesta toiminnallisuudesta (lähinnä napit). Kansio [services](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/services) sisältää koodia, joka vastaa sovelluksen käyttäjän ja tietokannan välisestä toiminnallisuudesta. Eli esimerkiksi käyttäjän kirjautumisesta. [Repositories](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/repositories)-kansio taas sisältää koodia, joka vastaa tiedon käsittelystä tietokannassa. [Entities](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/entities)-kansio sisältää sovelluksen Pet-luokan koodin.
 
+Sovelluksen rakennetta kuvaava kaavio. Kaaviossa on sovelluksen pakkaukset (kansiot) ja niiden sisältämät luokat.
+
+![Sovellusta kuvaava kaavio](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluskavio.drawio.png)
+
 ## Käyttöliittymä
 
 Käyttöliittymässä on 5 eri näkymää:
@@ -14,19 +18,18 @@ Käyttöliittymässä on 5 eri näkymää:
 - Päänäkymä
 - Sulkemisnäkymä
 
+Eri näkymien näyttämisestä vastaa [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/ui.py). Jokainen näkymä on toteutettu omana luokkanaan. Eri näkymissä kutsutaan [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokan metodeja, jotka ovat vastuussa sovelluslogiikasta. Suurin osa sovelluksen toiminnallisuudesta vastaavasta koodista on eristetty käyttölittymän koodista. Käyttöliittymän koodiin on jätetty sille olennaiset sovelluslogiikkaan liittyvät tehtävät, kuten eri viestilaatikkojen näyttäminen käyttäjälle.
+
 ## Sovelluslogiikka
 
 Sovelluksen [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/ui.py) on vastuussa eri näkymien näyttämisestä ja piilottamisesta. Luokat [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py) ja [CloseGameView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/close_game_view.py) taas vastaavat omien näkymiensä toiminnallisuuksista (esimerkiksi nappien painamisesta). Sovelluksen muut käyttöliittymään liittyvät näkymät toimivat jokseenkin samoilla periaatteilla. Tietokantaa vaativa toiminnallisuus on eristetty käyttöliittymän toiminnallisuudesta.
 
 Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokka, joka sisältää kirjautumiseen ja tietokannasta tiedon hakemiseen liittyviä toimintoja. [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka taas vastaa tiedon käsittelystä tietokannassa, kuten esimerkiksi virtuaalilemmikin tietojen kirjaamisesta tietokantaan. Luokka [Pet](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/entities/pet.py), on luokka joka kuvaa käyttäjän virtuaalilemmikkiä.
 
-Alustava koko sovellusta kuvaava kaavio. Kaaviossa on sovelluksen pakkaukset ja niiden luokat.
-
-![Alustava koko sovellusta kuvaava kaavio](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluskavio.drawio.png)
 
 ## Tietojen tallentaminen
 
-[PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka on vastuussa tietojen tallentamisesta SQLite-tietokantaan. Virtuaalilemmikin tiedot (nimi ja salasana) tallennetaan tietokannassa pets-tauluun. Taulu alustetaan [initialize_database.py](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/initialize_database.py) tiedostossa, jossa ensin tuhotaan mahdollisesti jo olemassa oleva pets-taulu, ja luodaan uusi tyhjä pets-taulu tilalle.
+[PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka on vastuussa tietojen tallentamisesta SQLite-tietokantaan. Virtuaalilemmikin tiedot (nimi, salasana, edistys ja kuva) tallennetaan tietokannassa pets-tauluun. Taulu alustetaan [initialize_database.py](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/initialize_database.py) tiedostossa, jossa ensin tuhotaan mahdollisesti jo olemassa oleva pets-taulu, ja luodaan uusi tyhjä pets-taulu tilalle.
 
 
 ## Sovelluksen toiminnallisuus
