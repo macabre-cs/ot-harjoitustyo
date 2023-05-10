@@ -24,20 +24,34 @@ Eri näkymien näyttämisestä vastaa [UI-luokka](https://github.com/macabre-cs/
 
 Sovelluksen [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/ui.py) on vastuussa eri näkymien näyttämisestä ja piilottamisesta. Luokat [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py) ja [CloseGameView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/close_game_view.py) taas vastaavat omien näkymiensä toiminnallisuuksista (esimerkiksi nappien painamisesta). Sovelluksen muut käyttöliittymään liittyvät näkymät toimivat jokseenkin samoilla periaatteilla. Tietokantaa vaativa toiminnallisuus on eristetty käyttöliittymän toiminnallisuudesta.
 
-Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokka, joka sisältää kirjautumiseen ja tietokannasta tiedon hakemiseen liittyviä toimintoja. [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka taas vastaa tiedon käsittelystä tietokannassa, kuten esimerkiksi virtuaalilemmikin tietojen kirjaamisesta tietokantaan. Luokka [Pet](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/entities/pet.py), on luokka joka kuvaa käyttäjän virtuaalilemmikkiä.
+Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokka, joka sisältää esimerkiksi kirjautumiseen ja tietokannasta tiedon hakemiseen liittyviä toimintoja. [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka taas vastaa tiedon käsittelystä tietokannassa, kuten esimerkiksi virtuaalilemmikin tietojen kirjaamisesta tietokantaan. Luokka [Pet](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/entities/pet.py), on luokka joka kuvaa käyttäjän virtuaalilemmikkiä.
 
+[PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokan metodit vastaavat siis pääosin sovelluksen loogisen toiminnallisuuden toteuttamisesta. Esimerkiksi metodit:
+
+- `adopt_pet(name, password, progress, pet_img)`
+- `login_pet(name, password)`
+- `get_progress()`
+- `save_progress(progress, name)`
+- `get_current_pet()`
+
+Luokka pääsee käsiksi lemmikin tietoihin [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokan avulla.
+
+Käyttöliittymän koodissa sille olennaisia loogisia toiminnallisuuksia, jotta koodi pysyisi selkeänä. Sovelluksen kehitysmittarin (progress bar) toiminnallisuus on osittain [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py)-luokan vastuulla. Luokka kuitenkin kutsuu [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokkaa tallentaessaan kehitysmittarin arvoja lemmikille tai luodessaan kehitysmittaria (tarkistaa onko lemmikillä jo aikaisempaa kehitystä). Käyttöliittymän koodiissa on myös muita sille olennaisia sovelluslogiikkaan tai muuhun sekalaiseen liittyvää toiminnallisuutta, kuten eri viestilaatikkojen näyttäminen käyttäjälle tai nappien toiminnallisuus.
 
 ## Tietojen tallentaminen
 
-[PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka on vastuussa tietojen tallentamisesta SQLite-tietokantaan. Virtuaalilemmikin tiedot (nimi, salasana, edistys ja kuva) tallennetaan tietokannassa pets-tauluun. Taulu alustetaan [initialize_database.py](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/initialize_database.py) tiedostossa, jossa ensin tuhotaan mahdollisesti jo olemassa oleva pets-taulu, ja luodaan uusi tyhjä pets-taulu tilalle.
-
+[PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka on vastuussa tietojen tallentamisesta SQLite-tietokantaan. Virtuaalilemmikin tiedot (nimi, salasana, edistys ja kuva) tallennetaan tietokannassa `pets`-tauluun. Taulu alustetaan [initialize_database.py](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/initialize_database.py) tiedostossa, jossa ensin tuhotaan mahdollisesti jo olemassa oleva pets-taulu, ja luodaan uusi tyhjä pets-taulu tilalle. Tietokannan nimi määritellään sovelluksen juuresta löytyvästä [.env](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/.env)-konfiguraatiotiedostossa.
 
 ## Sovelluksen toiminnallisuus
 
 Sovelluksessa on kahdenlaisia toiminnallisuuksia.
 
 - **Pelaamiselle** olennaiset toiminnallisuudet kuten virtuaalilemmikin ruokkimen ja helliminen.
-- Virtuaalilemmikin **tietojen tallentamiselle** olennaiset toiminnallisuudet kuten lemmikin adoptoiminen ja lemmikin poistaminen.
+- Virtuaalilemmikin **tietojen tallentamiselle** olennaiset toiminnallisuudet kuten lemmikin adoptoiminen ja lemmikin sisään kirjaaminen.
+
+### Pelaaminen
+
+Sovelluksen viehättävin toiminnallisuus eli pelaaminen on varsin simppeliä. Käyttäjä voi painaa eri nappeja, jotka tekevät eri asioita. Painamalla nappia `Love` sovellus arpoo yhden mahdollisista hellimisen muodoista ja näyttää käyttäjälle viestilaatikon, joka kertoo käyttäjälle mitä hän teki. Hellimisestä saa myös pisteitä, jotka edistävät lemmikin kiintymystä käyttäjään. Kehitystä kuvaa pelinäkymässä oleva mittari. Lemmikin ruokkiminen toimii samalla tavalla kuin helliminen, siitä saa tosin vähemmän pisteitä. Mikäli käyttäjä hellii ja ruokkii lemmikkiään tarpeeksi (eli mittarin täytyttyä) käyttäjälle näytetään viestilaatikko, jossa ilmaistaan lemmikin kiintymys käyttäjään. Käyttäjä voi myös halutessaan satuttaa lemmikkiään painamalla `Hurt :(`-nappia. Sovellus rankaisee käyttäjää vahvasti sammuttamalla koko ohjelman ja poistamalla lemmikin tietokannasata. Käyttäjälle näytetään myös tämän tapahtuessa viestilaatikko, joka toruu käyttäjää. Viestilaatikon sisältö on jälleen arvottu satunnaisesti eri vaihtoehdoista.
 
 ### Virtuaalilemmikin luominen
 
@@ -110,6 +124,10 @@ sequenceDiagram
 
 ```
 Auki kirjoitettuna käyttäjän avattua sovelluksen ja painettua "I already have a pet" nappia, käyttäjä syöttää lemmikin nimen ja salasanan niille osoitetuille kentille ja painaa "Log in with your pet" nappia. Tämän jälkeen PetService-luokka tarkistaa PetRepository luokalta, onko tämän niminen lemmikki tietokannassa. Tässä tapauksessa on, joten PetRepository-luokka palauttaa lemmikin Pet-olion. Sen jälkeen PetService palauttaa lemmikin Pet-olion takaisin LoginView-luokalle, jossa kutsutaan käyttäjän kirjautumismetodia. Käyttäjälle avautuu pelin päänäkymä, jossa on hänen virtuaalilemmikkinsä.
+
+### Muu toiminnallisuus
+
+Eri näkymien tapahtumankäsittelijät kutsuvat [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokan metodeja tarvittaessa, kuten lemmikin kehityksen tallentamisessa tai lemmikin uloskirjaamisessa. Käyttöliittymä vastaa näkymien näyttämisestä ja niiden välisestä toiminnallisuudesta esim. näkymästä toiseen siirtyminen.
 
 ## Sovelluksen heikkoudet
 
