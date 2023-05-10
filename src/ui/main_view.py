@@ -118,11 +118,15 @@ class MainView:
 
     def _create_progress_bar(self):
         self._progress_bar = ttk.Progressbar(
-            master=self._frame, style="game.Vertical.TProgressbar", orient="vertical", length=300, mode="determinate")
+            master=self._frame, style="game.Vertical.TProgressbar", orient="vertical", length=300, mode="determinate", maximum=100)
         self._progress_bar["value"] = pet_service.get_progress()
         self._progress_bar.place(x=30, y=80)
 
     def _progress(self, progress: int):
+        if self._progress_bar["value"] == 90 and progress == 20:
+            self._progress_bar["value"] += 10
+            pet_service.save_progress(
+                self._progress_bar["value"], self._pet.name)
         if self._progress_bar["value"] < 100:
             self._progress_bar["value"] += progress
             pet_service.save_progress(

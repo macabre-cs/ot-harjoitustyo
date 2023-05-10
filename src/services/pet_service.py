@@ -103,13 +103,14 @@ class PetService:
         return self._pet.progress
 
     def save_progress(self, progress, name):
-        """Tallentaa lemmikin rakkausmittarin edistyksen tietokantaan.
+        """Tallentaa lemmikin rakkausmittarin edistyksen tietokantaan ja lemmikin olioon.
 
         Args:
             progress (int): Lemmikin rakkausmittarin edistystä kuvaava arvo.
             name (str): Lemmikin nimi.
         """
         self._pet_repository.save_progress(progress, name)
+        self._pet.progress = progress
 
     def get_pet_img(self, value):
         """Palauttaa käyttäjän valitseman lemmikin kuvan nimen.
