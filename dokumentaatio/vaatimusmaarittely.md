@@ -1,7 +1,9 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään. Sovelluksessa käyttäjä voi luoda uuden lemmikin kolmesta eri vaihtoehdosta ja nimetä sen. Lemmikit tallennetaan tietokantaan käyttäjän määrittelemällä nimellä ja salasanalla, joten käyttäjällä voi olla useita lemmikkejä samanaikaisesti. Sovelluksessa lemmikille voi antaa hellyyttä, ruokaa tai kärsimystä.Pelin idea on saanut paljon inspiraatiota [Tamagotcheista](https://fi.wikipedia.org/wiki/Tamagotchi).
+Sovelluksen päätarkoituksena on viihdyttää käyttäjää. Sovellus on peli, jossa käyttäjä pääsee huolehtimaan omasta virtuaalilemmikistään. Sovelluksessa käyttäjä voi luoda uuden lemmikin kolmesta eri vaihtoehdosta ja nimetä sen. Lemmikit tallennetaan tietokantaan käyttäjän määrittelemällä nimellä ja salasanalla, joten käyttäjällä voi olla useita lemmikkejä samanaikaisesti. Sovelluksessa lemmikille voi antaa hellyyttä, ruokaa tai kärsimystä.
+
+Pelin idea on saanut paljon inspiraatiota [Tamagotcheista](https://fi.wikipedia.org/wiki/Tamagotchi).
 
 ## Perustoiminnallisuus
 - Sovelluksen avautuessa käyttäjä voi kirjautua sisään tai adoptoida uuden lemmikin
