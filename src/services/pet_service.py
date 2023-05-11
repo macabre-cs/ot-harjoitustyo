@@ -13,6 +13,10 @@ class PetNameAlreadyInUseError(Exception):
     pass
 
 
+class PetNameIsTooLongError(Exception):
+    pass
+
+
 class PetService:
     """Luokka, joka vastaa käyttäjän ja tietokannan välisestä toiminnallisuudesta.
     """
@@ -47,6 +51,9 @@ class PetService:
 
         if existing_pet:
             raise PetNameAlreadyInUseError(f"{name} already exists!")
+
+        if len(name) > 21:
+            raise PetNameIsTooLongError("Pet name is too long!")
 
         pet = self._pet_repository.create(
             Pet(name, password, progress, pet_img))

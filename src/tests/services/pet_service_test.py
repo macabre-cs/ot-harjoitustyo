@@ -1,7 +1,7 @@
 import unittest
 from entities.pet import Pet
 from services.pet_service import (
-    PetService, InvalidCredentialsError, PetNameAlreadyInUseError)
+    PetService, InvalidCredentialsError, PetNameAlreadyInUseError, PetNameIsTooLongError)
 
 
 class MockPetRepository:
@@ -119,3 +119,9 @@ class TestPetService(unittest.TestCase):
         img_name = self.pet_service.get_pet_img(2)
 
         self.assertNotEqual(img_name, self.pet_karvikki.image)
+
+    def test_adopt_pet_with_too_long_name(self):
+
+        self.assertRaises(PetNameIsTooLongError,
+                          self.pet_service.adopt_pet, "pitkispitkispitkispitkispitkispitkispitkispitkispitkispitkis", "pitkis",
+                          0, "Homo_Rotta_Otus_300x300.png")

@@ -1,5 +1,5 @@
-from tkinter import ttk, constants, messagebox, IntVar, filedialog
-from services.pet_service import pet_service, PetNameAlreadyInUseError
+from tkinter import ttk, constants, messagebox, IntVar
+from services.pet_service import pet_service, PetNameAlreadyInUseError, PetNameIsTooLongError
 from ui.ui_style import apply_style
 from PIL import ImageTk, Image
 from pathlib import Path
@@ -125,11 +125,6 @@ class AdoptView:
         password = self._password_entry.get()
         pet_img = pet_service.get_pet_img(self._var.get())
 
-        if len(pet_name) > 21:
-            messagebox.showerror(
-                "Pet name is too long error", "Pet name is too long!")
-            return
-
         if self._var.get() == 0:
             messagebox.showerror("Pet not selected error",
                                  "Please select a pet first")
@@ -146,3 +141,6 @@ class AdoptView:
         except PetNameAlreadyInUseError:
             messagebox.showerror("Pet already exists error",
                                  f"{pet_name} already exists!")
+        except PetNameIsTooLongError:
+            messagebox.showerror(
+                "Pet name is too long error", "Pet name is too long!")
