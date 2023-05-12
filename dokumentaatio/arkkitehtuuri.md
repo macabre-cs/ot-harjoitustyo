@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-Kansio [ui](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/ui) sisältää koodit, jotka vastaavat sovelluksen käyttöliittymästä ja käyttöliittymälle olennaisesta toiminnallisuudesta (lähinnä napit). Kansio [services](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/services) sisältää koodia, joka vastaa sovelluksen käyttäjän ja tietokannan välisestä toiminnallisuudesta. Eli esimerkiksi käyttäjän kirjautumisesta. [Repositories](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/repositories)-kansio taas sisältää koodia, joka vastaa tiedon käsittelystä tietokannassa. [Entities](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/entities)-kansio sisältää sovelluksen Pet-luokan koodin.
+Kansio [ui](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/ui) sisältää koodit, jotka vastaavat sovelluksen käyttöliittymästä ja käyttöliittymälle olennaisesta asioista. Kansio [services](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/services) sisältää koodia, joka vastaa sovelluksen käyttäjän ja tietokannan välisestä toiminnallisuudesta. Eli esimerkiksi käyttäjän kirjautumisesta ja lemmikin toiminnoista. [Repositories](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/repositories)-kansio taas sisältää koodia, joka vastaa tiedon käsittelystä tietokannassa. [Entities](https://github.com/macabre-cs/ot-harjoitustyo/tree/master/src/entities)-kansio sisältää sovelluksen Pet-luokan koodin.
 
 Sovelluksen rakennetta kuvaava kaavio. Kaaviossa on sovelluksen pakkaukset (kansiot) ja niiden sisältämät luokat.
 
@@ -22,7 +22,7 @@ Eri näkymien näyttämisestä vastaa [UI-luokka](https://github.com/macabre-cs/
 
 ## Sovelluslogiikka
 
-Sovelluksen [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/ui.py) on vastuussa eri näkymien näyttämisestä ja piilottamisesta. Luokat [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py) ja [CloseGameView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/close_game_view.py) taas vastaavat omien näkymiensä toiminnallisuuksista (esimerkiksi nappien painamisesta). Sovelluksen muut käyttöliittymään liittyvät näkymät toimivat jokseenkin samoilla periaatteilla. Tietokantaa vaativa toiminnallisuus on eristetty käyttöliittymän toiminnallisuudesta.
+Sovelluksen [UI-luokka](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/ui.py) on vastuussa eri näkymien näyttämisestä ja piilottamisesta. Luokat [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py) ja [CloseGameView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/close_game_view.py) taas vastaavat omien näkymiensä toiminnallisuuksista (esimerkiksi nappien painamisesta). Sovelluksen muut käyttöliittymään liittyvät näkymät toimivat samoilla periaatteilla. Tietokantaa vaativa toiminnallisuus on eristetty käyttöliittymän toiminnallisuudesta.
 
 Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokka, joka sisältää esimerkiksi kirjautumiseen ja tietokannasta tiedon hakemiseen liittyviä toimintoja. [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokka taas vastaa tiedon käsittelystä tietokannassa, kuten esimerkiksi virtuaalilemmikin tietojen kirjaamisesta tietokantaan. Luokka [Pet](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/entities/pet.py), on luokka joka kuvaa käyttäjän virtuaalilemmikkiä.
 
@@ -36,7 +36,7 @@ Käyttäjälle ja lemmikin tiedoista oleellisesta toiminnallisuudesta vastaa [Pe
 
 Luokka pääsee käsiksi lemmikin tietoihin [PetRepository](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/repositories/pet_repository.py)-luokan avulla.
 
-Käyttöliittymän koodissa sille olennaisia loogisia toiminnallisuuksia, jotta koodi pysyisi selkeänä. Sovelluksen kehitysmittarin (progress bar) toiminnallisuus on osittain [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py)-luokan vastuulla. Luokka kuitenkin kutsuu [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokkaa tallentaessaan kehitysmittarin arvoja lemmikille tai luodessaan kehitysmittaria (tarkistaa onko lemmikillä jo aikaisempaa kehitystä). Käyttöliittymän koodiissa on myös muita sille olennaisia sovelluslogiikkaan tai muuhun sekalaiseen liittyvää toiminnallisuutta, kuten eri viestilaatikkojen näyttäminen käyttäjälle tai nappien toiminnallisuus.
+Käyttöliittymän koodissa on sille olennaisia loogisia toiminnallisuuksia, jotta koodi pysyisi selkeänä. Sovelluksen kehitysmittarin (progress bar) toiminnallisuus on osittain [MainView](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/ui/main_view.py)-luokan vastuulla. Luokka kuitenkin kutsuu [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokkaa tallentaessaan kehitysmittarin arvoja lemmikille tai luodessaan kehitysmittaria *(esim. tarkistaa onko lemmikillä jo aikaisempaa kehitystä)*. Käyttöliittymän koodiissa on myös muita sille olennaisia sovelluslogiikkaan tai muuhun sekalaiseen liittyvää toiminnallisuutta, kuten eri viestilaatikkojen näyttäminen käyttäjälle tai nappien toiminnallisuus.
 
 ## Tietojen tallentaminen
 
@@ -129,8 +129,8 @@ Auki kirjoitettuna käyttäjän avattua sovelluksen ja painettua "I already have
 
 Eri näkymien tapahtumankäsittelijät kutsuvat [PetService](https://github.com/macabre-cs/ot-harjoitustyo/blob/master/src/services/pet_service.py)-luokan metodeja tarvittaessa, kuten lemmikin kehityksen tallentamisessa tai lemmikin uloskirjaamisessa. Käyttöliittymä vastaa näkymien näyttämisestä ja niiden välisestä toiminnallisuudesta esim. näkymästä toiseen siirtyminen.
 
-## Sovelluksen heikkoudet
+## Muuta
 
-### Käyttöliittymä ja rakenne
+### Ulkoiset kirjastot ja moduulit
 
-Käyttöliittymä on osittain liian sidottu sovelluksen toiminnallisuuteen. Moni oleellinen asia, on kiinni käyttöliittymän koodissa, joka hankaloittaa sovelluslogiikan testaamista. Eri näkymien luokkien koodi ei myöskään ole kovin yhtenäistä, koska olen testaillut eri asioita eri näkymissä. Tämä tekee koodista hankalampaa ymmärtää.
+Sovelluksessa on hyödynnetty [PIL](https://pillow.readthedocs.io/en/stable/)-kirjastoa kuvien näyttämiseen ja editoimiseen. [Pathlib](https://docs.python.org/3/library/pathlib.html)-moduulia on myös hyödynnetty tiedostojen polkujen etsimiseen.
