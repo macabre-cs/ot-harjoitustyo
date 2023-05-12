@@ -19,4 +19,8 @@
 | 3.5 | 3 | edistysmittarin lisääminen |
 | 4.5 | 1 | testien päivitystä ja pillow:iin tutustumista |
 | 6.5 | 6 | lemmikin ulkomuotovalikon tekeminen, testien päivitys, sovelluslogiikan eristämistä käyttöliittymän koodista, ympäristömuuttujien käyttöönotto |
-| yht | 68 |
+| 8.5 | 3,5 | testejä, doctringejä, korjauksia, käyttöliittymän hiomista |
+| 9.5 | 2 | sovelluksen hienosäätöä ja dokumentointia |
+| 10.5 | 2 | edistysmittarin korjausta ja dokumentointia |
+| 11.5 | 2,5 | dokumentointia |
+| yht | 78 |
