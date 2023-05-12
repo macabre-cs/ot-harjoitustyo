@@ -42,6 +42,7 @@ class PetService:
 
         Raises:
             PetNameAlreadyInUseError: Virhe. Tapahtuu kun luodaan lemmikki, jonka nimi on käytössä.
+            PetNameIsTooLongError: Virhe. Tapahtuu kun lemmikille annetaan liian pitkä nimi.
 
         Returns:
             olio: Pet-olio luodusta lemmikistä. 
@@ -105,7 +106,7 @@ class PetService:
         """Palauttaa lemmikin rakkausmittarin arvon.
 
         Returns:
-            int tai None: Lemmikin rakkausmittarin edistystä kuvaava arvo.
+            int: Lemmikin rakkausmittarin edistystä kuvaava arvo.
         """
         return self._pet.progress
 
