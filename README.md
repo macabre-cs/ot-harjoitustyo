@@ -18,7 +18,7 @@ Sovellusta on testattu Python-versiolla `3.10`. Sovelluksen toiminnallisuudessa 
 
 ## Release
 
-Sovelluksen releaset löytyy [täältä](https://github.com/macabre-cs/ot-harjoitustyo/releases).
+Sovelluksen viimeisin release löytyy [tästä](https://github.com/macabre-cs/ot-harjoitustyo/releases/tag/viikko7).
 
 ## Asennus
 
