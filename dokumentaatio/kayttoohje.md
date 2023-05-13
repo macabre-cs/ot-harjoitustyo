@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa sovelluksen viimeisin [release](https://github.com/macabre-cs/ot-harjoitustyo/releases).
+Lataa sovelluksen viimeisin [release](https://github.com/macabre-cs/ot-harjoitustyo/releases/tag/viikko7).
 
 ## Konfiguraatio
 
