@@ -132,6 +132,13 @@ class MainView:
             pet_service.save_progress(
                 self._progress_bar["value"], self._pet.name)
         if self._progress_bar["value"] >= 100:
-            messagebox.showinfo(message="Your virtual pet loves you!")
+            self._max_love()
             pet_service.save_progress(
                 self._progress_bar["value"], self._pet.name)
+
+    def _max_love(self):
+        max_love_choices = ["Your virtual pet loves you!",
+                            "Your virtual pet is looking at you affectionately :3",
+                            "Your heart is filled with love and affection!",
+                            "Your virtual pet made a cute noise, it loves you."]
+        messagebox.showinfo(message=random.choice(max_love_choices))
