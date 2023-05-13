@@ -23,4 +23,5 @@
 | 9.5 | 2 | sovelluksen hienosäätöä ja dokumentointia |
 | 10.5 | 2 | edistysmittarin korjausta ja dokumentointia |
 | 11.5 | 2,5 | dokumentointia |
-| yht | 78 |
+| 13.5 | 1 | loppupalautus |
+| yht | 79 |
